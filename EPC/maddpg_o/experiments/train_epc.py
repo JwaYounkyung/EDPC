@@ -11,8 +11,8 @@ def add_extra_flags(parser):
     parser.add_argument('--cooperative', action="store_true", default=False)
     parser.add_argument('--initial-population', type=int, default=9)
     parser.add_argument('--num-selection', type=int, default=2)
-    parser.add_argument('--num-stages', type=int)
-    parser.add_argument('--stage-num-episodes', type=int, nargs="+")
+    parser.add_argument('--num-stages', type=int, default=3)
+    parser.add_argument('--stage-num-episodes', type=int, nargs="+", default=[50000, 25000, 25000])
     parser.add_argument('--stage-n-envs', type=int, nargs="+")
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
@@ -21,6 +21,7 @@ def add_extra_flags(parser):
 
 def touch_dir(dirname):
     os.makedirs(dirname, exist_ok=True)
+    # 왜 안뜨지 
 
 
 def join_dir(dirname1, dirname2):
