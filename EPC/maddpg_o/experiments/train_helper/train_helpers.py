@@ -13,7 +13,7 @@ import argparse
 import time
 import re
 # import ray
-import multiprocessing
+import multiprocessing, logging
 # import pathos.multiprocessing as mp
 # from multiprocessing import Pool
 # sys.path.append('..')
@@ -28,6 +28,8 @@ import tempfile
 import random
 import gc
 
+# logger = multiprocessing.log_to_stderr()
+# logger.setLevel(multiprocessing.SUBDEBUG)
 
 FLAGS = None
 
@@ -311,7 +313,7 @@ def parse_args(add_extra_flags=None):
         "Reinforcement Learning experiments for multiagent environments")
     # Environment
     parser.add_argument("--scenario", type=str,
-                        default="simple_spread",
+                        default="simple_spread", # food_collect, simple_spread
                         help="name of the scenario script")
     parser.add_argument("--map-size", type=str, default="normal")
     parser.add_argument("--sight", type=float, default=100)
@@ -323,11 +325,11 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--num-episodes", type=int,
                         default=200000, help="number of episodes")
     parser.add_argument("--num-adversaries", type=int,
-                        default=2, help="number of adversaries")
+                        default=0, help="number of adversaries")
     parser.add_argument("--num-good", type=int,
-                        default=2, help="number of good")
+                        default=3, help="number of good")
     parser.add_argument("--num-food", type=int,
-                        default=4, help="number of food")
+                        default=3, help="number of food")
     parser.add_argument("--good-policy", type=str,
                         default="att-maddpg", help="policy for good agents")
     parser.add_argument("--adv-policy", type=str,

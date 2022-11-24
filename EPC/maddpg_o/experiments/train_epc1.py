@@ -11,12 +11,12 @@ import numpy as np
 
 
 def add_extra_flags(parser):
-    parser.add_argument('--cooperative', action="store_true", default=False)
-    parser.add_argument('--initial-population', type=int, default=9)
-    parser.add_argument('--num-selection', type=int, default=2)
+    parser.add_argument('--cooperative', action="store_true", default=True)
+    parser.add_argument('--initial-population', type=int, default=6)
+    parser.add_argument('--num-selection', type=int, default=3)
     parser.add_argument('--num-stages', type=int, default=3)
     parser.add_argument('--stage-num-episodes', nargs="+", default=[50000, 25000, 25000])
-    parser.add_argument('--stage-n-envs', nargs="+", default=[25])
+    parser.add_argument('--stage-n-envs', nargs="+", default=[25]) 
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
     return parser
