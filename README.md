@@ -5,19 +5,21 @@
 - conda environment setting
 ```
 conda create -n GT python=3.7 -y
+conda activate GT
 ```
 - nessary packages
 ```
 pip install tensorflow==1.13.1
-pip install numpy==1.16.5
 pip install protobuf==3.20
+pip install numpy==1.16.5
+pip install gym==0.13.0
 pip install joblib imageio
 ```
 
 ## Quick start
 
 ```
-python maddpg_o/experiments/train_epc1.py > log.log
+python EPC/maddpg_o/experiments/train_epc1.py 2>&1 | tee epc_simplespread.txt
 ```
 
 
