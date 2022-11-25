@@ -53,7 +53,7 @@ class Scenario(BaseScenario):
             landmark.collide = False
             landmark.movable = False
             landmark.occupy = [0]
-        world.landmarks += world.food
+        world.landmarks = world.food
         self.reset_world(world)
         return world
 
@@ -127,9 +127,10 @@ class Scenario(BaseScenario):
     def reward_all_in_once(self, agent, world):
         num_agents = len(world.agents)
         reward_n = np.zeros(num_agents)
+        for l in world.landmarks:
+            reward_n -= min([self.dist(a, l) for a in world.agents])
         for i, agent_new in enumerate(world.agents):
-            for l in world.landmarks:
-                reward_n[i] -= self.dist(agent_new, l)
+
             if agent_new.collide:
                 for a in world.agents:
                     if self.is_collision(a, agent_new):
