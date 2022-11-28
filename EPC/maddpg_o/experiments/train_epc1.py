@@ -1,19 +1,22 @@
-from .train_helper.train_helpers import parse_args
-from .train_helper.proxy_train import proxy_train
-from .train_mix_match import mix_match
-from .compete import compete
+import os,sys
+sys.path.insert(1, os.path.join(sys.path[0], '../..'))
+
+from train_helper.train_helpers import parse_args
+from train_helper.proxy_train import proxy_train
+from train_mix_match import mix_match
+from compete import compete
 import os
 import joblib
 import numpy as np
 
 
 def add_extra_flags(parser):
-    parser.add_argument('--cooperative', action="store_true", default=False)
-    parser.add_argument('--initial-population', type=int, default=9)
-    parser.add_argument('--num-selection', type=int, default=2)
+    parser.add_argument('--cooperative', action="store_true", default=True)
+    parser.add_argument('--initial-population', type=int, default=6)
+    parser.add_argument('--num-selection', type=int, default=3)
     parser.add_argument('--num-stages', type=int, default=3)
-    parser.add_argument('--stage-num-episodes', type=int, nargs="+", default=[50000, 25000, 25000])
-    parser.add_argument('--stage-n-envs', type=int, nargs="+")
+    parser.add_argument('--stage-num-episodes', nargs="+", default=[50000, 25000, 25000])
+    parser.add_argument('--stage-n-envs', nargs="+", default=[25]) 
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
     return parser
@@ -21,7 +24,6 @@ def add_extra_flags(parser):
 
 def touch_dir(dirname):
     os.makedirs(dirname, exist_ok=True)
-    # 왜 안뜨지 
 
 
 def join_dir(dirname1, dirname2):

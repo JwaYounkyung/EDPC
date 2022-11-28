@@ -13,7 +13,7 @@ import argparse
 import time
 import re
 # import ray
-import multiprocessing
+import multiprocessing, logging
 # import pathos.multiprocessing as mp
 # from multiprocessing import Pool
 # sys.path.append('..')
@@ -28,6 +28,8 @@ import tempfile
 import random
 import gc
 
+# logger = multiprocessing.log_to_stderr()
+# logger.setLevel(multiprocessing.SUBDEBUG)
 
 FLAGS = None
 
@@ -311,7 +313,7 @@ def parse_args(add_extra_flags=None):
         "Reinforcement Learning experiments for multiagent environments")
     # Environment
     parser.add_argument("--scenario", type=str,
-                        default="grassland",
+                        default="simple_spread", # food_collect, simple_spread
                         help="name of the scenario script")
     parser.add_argument("--map-size", type=str, default="normal")
     parser.add_argument("--sight", type=float, default=100)
@@ -323,15 +325,15 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--num-episodes", type=int,
                         default=200000, help="number of episodes")
     parser.add_argument("--num-adversaries", type=int,
-                        default=2, help="number of adversaries")
+                        default=0, help="number of adversaries")
     parser.add_argument("--num-good", type=int,
-                        default=2, help="number of good")
+                        default=3, help="number of good")
     parser.add_argument("--num-food", type=int,
-                        default=4, help="number of food")
+                        default=3, help="number of food")
     parser.add_argument("--good-policy", type=str,
-                        default="maddpg", help="policy for good agents")
+                        default="att-maddpg", help="policy for good agents")
     parser.add_argument("--adv-policy", type=str,
-                        default="maddpg", help="policy of adversaries")
+                        default="att-maddpg", help="policy of adversaries")
     # Core training parameters
     parser.add_argument("--lr", type=float, default=1e-2,
                         help="learning rate for Adam optimizer")
@@ -339,23 +341,23 @@ def parse_args(add_extra_flags=None):
                         default=0.95, help="discount factor")
     parser.add_argument("--batch-size", type=int, default=1024,
                         help="number of episodes to optimize at the same time")
-    parser.add_argument("--num-units", type=int, default=64,
+    parser.add_argument("--num-units", type=int, default=32,
                         help="number of units in the mlp")
     parser.add_argument("--good-num-units", type=int)
     parser.add_argument("--adv-num-units", type=int)
-    parser.add_argument("--n-cpu-per-agent", type=int, default=1)
-    parser.add_argument("--good-share-weights", action="store_true", default=False)
-    parser.add_argument("--adv-share-weights", action="store_true", default=False)
-    parser.add_argument("--use-gpu", action="store_true", default=False)
+    parser.add_argument("--n-cpu-per-agent", type=int, default=40)
+    parser.add_argument("--good-share-weights", action="store_true", default=True)
+    parser.add_argument("--adv-share-weights", action="store_true", default=True)
+    parser.add_argument("--use-gpu", action="store_true", default=True)
     # Checkpointing
-    parser.add_argument("--save-dir", type=str, default="./test/",
+    parser.add_argument("--save-dir", type=str, default="./result/simple_spread_epc",
                         help="directory in which training state and model should be saved")
     parser.add_argument("--train-rate", type=int, default=100,
                         help="save model once every time this many episodes are completed")
-    parser.add_argument("--save-rate", type=int, default=1000,
+    parser.add_argument("--save-rate", type=int, default=100,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--checkpoint-rate", type=int, default=0)
-    parser.add_argument("--load-dir", type=str, default="./test/",
+    parser.add_argument("--load-dir", type=str, default="./result/simple_spread_epc",
                         help="directory in which training state and model are loaded")
     # Evaluation
     parser.add_argument("--restore", action="store_true", default=False)
@@ -368,8 +370,7 @@ def parse_args(add_extra_flags=None):
 
     parser.add_argument("--n-envs", type=int, default=1)
     parser.add_argument("--save-summary", action="store_true", default=False)
-    parser.add_argument("--timeout", type=float, default=0.02)
-
+    parser.add_argument("--timeout", type=float, default=0.03)
     if add_extra_flags is not None:
         parser = add_extra_flags(parser)
 
