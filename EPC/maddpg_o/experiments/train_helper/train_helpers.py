@@ -345,16 +345,16 @@ def parse_args(add_extra_flags=None):
                         help="number of units in the mlp")
     parser.add_argument("--good-num-units", type=int)
     parser.add_argument("--adv-num-units", type=int)
-    parser.add_argument("--n-cpu-per-agent", type=int, default=40)
+    parser.add_argument("--n-cpu-per-agent", type=int, default=24)
     parser.add_argument("--good-share-weights", action="store_true", default=True)
     parser.add_argument("--adv-share-weights", action="store_true", default=True)
     parser.add_argument("--use-gpu", action="store_true", default=True)
     # Checkpointing
     parser.add_argument("--save-dir", type=str, default="./result/simple_spread_epc",
                         help="directory in which training state and model should be saved")
-    parser.add_argument("--train-rate", type=int, default=100,
+    parser.add_argument("--train-rate", type=int, default=1000,
                         help="save model once every time this many episodes are completed")
-    parser.add_argument("--save-rate", type=int, default=100,
+    parser.add_argument("--save-rate", type=int, default=1000,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--checkpoint-rate", type=int, default=0)
     parser.add_argument("--load-dir", type=str, default="./result/simple_spread_epc",

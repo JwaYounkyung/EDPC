@@ -1,0 +1,36 @@
+# stage 0 seed 0-5
+# stage 1 seed 0-5
+# stage 2 seed 0-5
+
+
+# stage 0 seed 0
+1000 episodes, total time: 8.98, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.07.
+reward: [-56.779867815791405, -56.779867815791405, -55.82986781579141]
+
+50000 episodes, total time: 12.00, update time: 3.26 (sample time: 0.00, target action time: 0.00, pure update time: 3.24), save time: 0.09.
+reward: [-48.64011923933197, -49.19011923933197, -48.59011923933197] 
+sum: -146.4203577180059, mean: -48.80678590600197, std: 0.30000000000000004
+Total training time:  0h10m 6s.457.
+
+
+# stage 1 seed 0
+1000 episodes, total time: 21.73, update time: 4.30 (sample time: 0.00, target action time: 0.00, pure update time: 4.30), save time: 0.11.
+Estimated finish time:  0h 8m41s.633
+Time grass: [9.   0.4  3.45 7.05 8.   6.15], time live: [0. 0. 0. 0. 0. 0.]
+reward: [-93.30886530174391, -95.4088653017439, -89.6088653017439, -97.55886530174391, -79.2588653017439, -78.9088653017439]
+
+25000 episodes, total time: 25.98, update time: 8.45 (sample time: 0.00, target action time: 0.00, pure update time: 8.43), save time: 0.10.
+reward: [-70.89602359151897, -70.89602359151897, -76.64602359151897, -78.39602359151897, -77.14602359151897, -70.99602359151898] 
+sum: -443.7341461561159, mean: -73.95602352601865
+Total training time:  0h10m44s.134.
+
+
+# stage 2 seed 0
+1000 episodes, total time: 38.11, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.10.
+reward: [-92.2593845667959, -103.20938456679588, -97.15938456679591, -93.2593845667959, -100.35938456679591, -106.70938456679588, -96.3093845667959, -107.45938456679588, -102.2093845667959, -102.10938456679591, -101.60938456679591, -93.65938456679591]
+
+25000 episodes, total time: 106.12, update time: 67.47 (sample time: 0.00, target action time: 0.00, pure update time: 67.46), save time: 0.11.
+reward: [-102.19660028021887, -103.09660028021888, -103.14660028021888, -101.09660028021888, -103.04660028021888, -101.09660028021888, -106.49660028021887, -104.89660028021888, -102.39660028021888, -102.94660028021887, -102.59660028021888, -101.54660028021888] 
+sum: -1225.8367233276367, mean: -101.31972777730389
+Total training time:  0h43m 4s.228.
+

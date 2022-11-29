@@ -30,14 +30,20 @@ class Scenario(BaseScenario):
         num_agents = num_good_agents
         num_landmarks = self.n_landmarks
         num_food = self.n_food
+        num_forests = self.n_forests
         # add agents
         world.agents = [Agent() for i in range(num_agents)]
         for i, agent in enumerate(world.agents):
             agent.name = 'agent %d' % i
             agent.collide = True
             agent.silent = True
+            agent.adversary = False
             agent.size = 0.15
+            agent.accel = 4.0
+            agent.showmore = np.zeros(num_food)
+            agent.max_speed = 4
             agent.live = 1
+            agent.mindis = 0
             agent.time = 0
             agent.occupy = 0
         # add landmarks
@@ -46,27 +52,37 @@ class Scenario(BaseScenario):
             landmark.name = 'landmark %d' % i
             landmark.collide = False
             landmark.movable = False
+            landmark.size = 0
+            landmark.boundary = False
         # make initial conditions
         world.food = [Landmark() for i in range(num_food)]
         for i, landmark in enumerate(world.food):
             landmark.name = 'food %d' % i
             landmark.collide = False
             landmark.movable = False
+            landmark.size = 0.03
+            landmark.boundary = False
             landmark.occupy = [0]
-        world.landmarks = world.food
+            landmark.mindis = 0
+        world.landmarks += world.food
         self.reset_world(world)
         return world
 
     def reset_world(self, world):
         # random properties for agents
+        seed = int.from_bytes(os.urandom(4), byteorder='little')
+        np.random.seed(seed)
         for i, agent in enumerate(world.agents):
             agent.color = np.array([0.35, 0.35, 0.85])
             agent.live = 1
+            agent.mindis = 0
             agent.time = 0
             agent.occupy = [0]
         # random properties for landmarks
         for i, landmark in enumerate(world.landmarks):
             landmark.color = np.array([0.25, 0.25, 0.25])
+        for i, landmark in enumerate(world.food):
+            landmark.color = np.array([0.15, 0.15, 0.65])
         # set random initial states
         for agent in world.agents:
             agent.state.p_pos = np.random.uniform(-1, +1, world.dim_p)
@@ -74,10 +90,12 @@ class Scenario(BaseScenario):
             agent.state.c = np.zeros(world.dim_c)
         for i, landmark in enumerate(world.landmarks):
             landmark.state.p_pos = np.random.uniform(-1, +1, world.dim_p)
+            landmark.state.p_vel = np.zeros(world.dim_p)
         for i, landmark in enumerate(world.food):
             landmark.state.p_pos = np.random.uniform(-1, +1, world.dim_p)
-            landmark.occupy = 0
             landmark.state.p_vel = np.zeros(world.dim_p)
+            landmark.occupy = 0
+            landmark.mindis = 0
 
     def benchmark_data(self, agent, world):
         rew = 0
