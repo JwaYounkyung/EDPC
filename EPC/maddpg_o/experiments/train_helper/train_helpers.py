@@ -6,6 +6,7 @@ import tensorflow as tf
 from tensorflow.contrib import layers
 import math
 from maddpg_o.maddpg_local.micro.maddpg import MADDPGAgentMicroSharedTrainer
+from maddpg_o.maddpg_local.micro.rmaddpg import RMADDPGAgentMicroSharedTrainer
 import maddpg_o.maddpg_local.common.tf_util as U
 from .model_v3_test3 import mlp_model_agent_p, mlp_model_adv_p, mlp_model_agent_q, mlp_model_adv_q, mlp_model, mean_field_adv_q_model, mean_field_agent_q_model
 from .model_v3_numbered import mlp_model_agent_p_numbered, mlp_model_adv_p_numbered, mlp_model_agent_q_numbered, mlp_model_adv_q_numbered
@@ -237,6 +238,13 @@ def get_trainer(side, i, scope, env, obs_shape_n):
     elif policy == "maddpg":
         model_p = mlp_model
         model_q = mlp_model
+    elif policy == "r-att-maddpg":
+        model_nature = partial(mlp_model_adv_p if side == "adv" else mlp_model_agent_p, n_good=N_GOOD, n_adv=N_ADV,
+                          n_land=N_LAND, index=i, share_weights=share_weights)
+        model_p = partial(mlp_model_adv_p if side == "adv" else mlp_model_agent_p, n_good=N_GOOD, n_adv=N_ADV,
+                          n_land=N_LAND, index=i, share_weights=share_weights)
+        model_q = partial(mlp_model_adv_q if side == "adv" else mlp_model_agent_q, n_good=N_GOOD, n_adv=N_ADV,
+                          n_land=N_LAND, index=i, share_weights=share_weights)
     elif policy == "mean_field":
         model_p = mlp_model
         model_q = partial(mean_field_adv_q_model if side == "adv" else mean_field_agent_q_model, n_good=N_GOOD,
@@ -245,7 +253,11 @@ def get_trainer(side, i, scope, env, obs_shape_n):
         raise NotImplementedError
     # print(obs_shape_n)
     num_units = (FLAGS.adv_num_units if side == "adv" else FLAGS.good_num_units) or FLAGS.num_units
-    return trainer(scope, model_p, model_q, obs_shape_n, env.action_space, i, FLAGS, num_units, local_q_func=False)
+    if policy == "r-att-maddpg":
+        trainer = RMADDPGAgentMicroSharedTrainer
+        return trainer(scope, model_nature, model_p, model_q, obs_shape_n, env.action_space, i, FLAGS, num_units, local_q_func=False)
+    else:
+        return trainer(scope, model_p, model_q, obs_shape_n, env.action_space, i, FLAGS, num_units, local_q_func=False)
 
 
 def get_adv_trainer(i, scope, env, obs_shape_n):
@@ -313,7 +325,7 @@ def parse_args(add_extra_flags=None):
         "Reinforcement Learning experiments for multiagent environments")
     # Environment
     parser.add_argument("--scenario", type=str,
-                        default="simple_spread", # food_collect, simple_spread
+                        default="food_collect", # food_collect, simple_spread
                         help="name of the scenario script")
     parser.add_argument("--map-size", type=str, default="normal")
     parser.add_argument("--sight", type=float, default=100)
