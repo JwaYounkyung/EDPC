@@ -29,6 +29,9 @@ import tempfile
 import random
 import gc
 
+import warnings
+warnings.filterwarnings("ignore")
+
 # logger = multiprocessing.log_to_stderr()
 # logger.setLevel(multiprocessing.SUBDEBUG)
 
@@ -201,11 +204,11 @@ def make_env(scenario_name, arglist, benchmark=False):
     # create multiagent environment
     if benchmark:
         env = MultiAgentEnv(world, scenario.reset_world, scenario.reward,
-                            scenario.observation, scenario.benchmark_data, export_episode=FLAGS.save_gif_data)
+                            scenario.observation, scenario.benchmark_data, export_episode=FLAGS.save_gif_data, noise_std=FLAGS.noise_std)
     else:
         env = MultiAgentEnv(world, scenario.reset_world, scenario.reward,
                             scenario.observation, done_callback=scenario.done, info_callback=scenario.info,
-                            export_episode=FLAGS.save_gif_data)
+                            export_episode=FLAGS.save_gif_data, noise_std=FLAGS.noise_std)
     return env
 
 
@@ -349,6 +352,8 @@ def parse_args(add_extra_flags=None):
     # Core training parameters
     parser.add_argument("--lr", type=float, default=1e-2,
                         help="learning rate for Adam optimizer")
+    parser.add_argument("--lr-nature", type=float, default=1e-3,
+                        help="learning rate for Adam optimizer of nature actor")
     parser.add_argument("--gamma", type=float,
                         default=0.95, help="discount factor")
     parser.add_argument("--batch-size", type=int, default=1024,
@@ -361,15 +366,17 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--good-share-weights", action="store_true", default=True)
     parser.add_argument("--adv-share-weights", action="store_true", default=True)
     parser.add_argument("--use-gpu", action="store_true", default=True)
+    parser.add_argument("--noise-std", type=float, default=0.0)
+    
     # Checkpointing
-    parser.add_argument("--save-dir", type=str, default="./result/simple_spread_epc",
+    parser.add_argument("--save-dir", type=str, default="./result/epc_food_collect",
                         help="directory in which training state and model should be saved")
     parser.add_argument("--train-rate", type=int, default=1000,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--save-rate", type=int, default=1000,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--checkpoint-rate", type=int, default=0)
-    parser.add_argument("--load-dir", type=str, default="./result/simple_spread_epc",
+    parser.add_argument("--load-dir", type=str, default="./result/epc_food_collect",
                         help="directory in which training state and model are loaded")
     # Evaluation
     parser.add_argument("--restore", action="store_true", default=False)
@@ -1006,8 +1013,8 @@ def train(arglist, init_weight_config=None, cached_weights=None):
                 # print(info_n)
                 if record:
                     for i in range(n):
-                        time_grass[index][i] += info_n[i][0]
-                        time_live[index][i] = info_n[i][1]
+                        time_grass[index][i] += info_n['n'][i][0]
+                        time_live[index][i] = info_n['n'][i][1]
                 if FLAGS.train_rate > 0:
                     # replay_buffer.add([obs_n, action_n, reward_n, new_obs_n, done_n])
                     exp_len, flat_data = exp_to_bytes(tmp_file, [obs_n, action_n, reward_n, new_obs_n, done_n])
@@ -1160,6 +1167,9 @@ def train(arglist, init_weight_config=None, cached_weights=None):
     for i in range(n_envs):
         envs[i].terminate()
         envs[i].join()
+        
+    tmp_file.close()
+    test_tmp_file.close()
 
     # print(len(time_grass_all), time_grass_all[0])
     print("Time grass: {}, time live: {}".format(np.mean(np.array(time_grass_all), axis=0),

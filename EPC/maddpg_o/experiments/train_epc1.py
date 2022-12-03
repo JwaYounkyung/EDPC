@@ -9,13 +9,16 @@ import os
 import joblib
 import numpy as np
 
+import warnings
+warnings.filterwarnings("ignore")
+
 
 def add_extra_flags(parser):
     parser.add_argument('--cooperative', action="store_true", default=True)
-    parser.add_argument('--initial-population', type=int, default=6)
-    parser.add_argument('--num-selection', type=int, default=3)
+    parser.add_argument('--initial-population', type=int, default=6)#6
+    parser.add_argument('--num-selection', type=int, default=3)#3
     parser.add_argument('--num-stages', type=int, default=3)
-    parser.add_argument('--stage-num-episodes', nargs="+", default=[50000, 25000, 25000])
+    parser.add_argument('--stage-num-episodes', nargs="+", default=[50000, 20000, 20000])
     parser.add_argument('--stage-n-envs', nargs="+", default=[25]) 
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
