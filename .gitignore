@@ -5,3 +5,6 @@
 EPC/result/
 **/.vscode/
 result/
+*.txt
+*.log
+**/R-MADDPG/multiagent/scenarios/

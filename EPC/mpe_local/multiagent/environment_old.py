@@ -4,7 +4,6 @@ from gym.envs.registration import EnvSpec
 import numpy as np
 from mpe_local.multiagent.multi_discrete import MultiDiscrete
 import os
-from mpe_local.distributions import truncated_normal
 
 # environment for all agents in the multiagent world
 # currently code assumes that no agents will be created/destroyed at runtime!
@@ -15,28 +14,25 @@ class MultiAgentEnv(gym.Env):
 
     def __init__(self, world, reset_callback=None, reward_callback=None,
                  observation_callback=None, info_callback=None,
-                 done_callback=None, shared_viewer=True, noise_std=0.36, export_episode=False):
+                 done_callback=None, shared_viewer=True, export_episode=False):
 
         # np.random.seed(int.from_bytes(os.urandom(4), byteorder='little'))
         self.world = world
         self.agents = self.world.policy_agents
         # set required vectorized gym env property
         self.n = len(world.policy_agents)
-
         # scenario callbacks
         self.reset_callback = reset_callback
         self.reward_callback = reward_callback
         self.observation_callback = observation_callback
         self.info_callback = info_callback
         self.done_callback = done_callback
-
         # environment parameters
         self.discrete_action_space = True
         # if true, action is a number 0...N, otherwise action is a one-hot N-dimensional vector
         self.discrete_action_input = False
         # if true, even the action is continuous, action will be performed discretely
         self.force_discrete_action = world.discrete_action if hasattr(world, 'discrete_action') else False
-
         # if true, every agent has the same reward
         self.shared_reward = world.collaborative if hasattr(world, 'collaborative') else False
         if hasattr(world, 'collaborative'):
@@ -47,9 +43,6 @@ class MultiAgentEnv(gym.Env):
 
         self.export_episode = export_episode
         self.episode_memory = []
-        
-        ## insert the noise std variables
-        self.noise_std = noise_std  # noise level
 
         # configure spaces
         self.action_space = []
@@ -104,18 +97,14 @@ class MultiAgentEnv(gym.Env):
         obs_n = []
         reward_n = []
         done_n = []
-        # we need info of rewards with uncertainty and true rewards
-        info_n = {'n': [], 'true_rewards': []}
-        # info_n = []
+        # info_n = {'n': []}
+        info_n = []
         self.agents = self.world.policy_agents
-
         # set action for each agent
         for i, agent in enumerate(self.agents):
             self._set_action(action_n[i], agent, self.action_space[i])
-
         # advance world state
         self.world.step()
-
         # record observation for each agent
         for agent in self.agents:
             obs_n.append(self._get_obs(agent))
@@ -123,19 +112,15 @@ class MultiAgentEnv(gym.Env):
                 reward_n.append(self._get_reward(agent))
                 # print("after", agent.color)
             done_n.append(self._get_done(agent))
-            info_n['n'].append(self._get_info(agent))
-            # info_n.append(self._get_info(agent))
+
+            # info_n['n'].append(self._get_info(agent))
+            info_n.append(self._get_info(agent))
 
         # all agents get total reward in cooperative case
         # reward_n = self._get_reward(agent)
         # print(reward_n)
-        
         if self.shared_reward:
             reward_n = self._get_reward(agent)
-        ## save the true rewards
-        info_n['true_rewards'] = reward_n
-        ## perturbate the reward values
-        reward_n = truncated_normal((self.n,), mean=reward_n, std=self.noise_std, threshold=2.0)
         if self.export_episode:
             self._save_state()
 

@@ -5,6 +5,9 @@ from tensorflow.python.ops import math_ops
 from mpe_local.multiagent.multi_discrete import MultiDiscrete
 from tensorflow.python.ops import nn
 
+import warnings
+warnings.filterwarnings("ignore")
+
 class Pd(object):
     """
     A particular probability distribution
