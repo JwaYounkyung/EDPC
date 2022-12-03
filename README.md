@@ -20,6 +20,7 @@ pip install joblib imageio
 
 ```
 python EPC/maddpg_o/experiments/train_epc1.py 2>&1 | tee epc_simplespread.txt
+python EPC/maddpg_o/experiments/train_epc1.py --good-policy r-att-maddpg
 ```
 
 

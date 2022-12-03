@@ -325,7 +325,7 @@ def parse_args(add_extra_flags=None):
         "Reinforcement Learning experiments for multiagent environments")
     # Environment
     parser.add_argument("--scenario", type=str,
-                        default="food_collect", # food_collect, simple_spread
+                        default="simple_spread", # food_collect, simple_spread
                         help="name of the scenario script")
     parser.add_argument("--map-size", type=str, default="normal")
     parser.add_argument("--sight", type=float, default=100)

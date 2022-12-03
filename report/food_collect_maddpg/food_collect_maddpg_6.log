@@ -1,0 +1,829 @@
+100.0 sight___simple_spread_v25
+0.0 alpha######################
+collaborate!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+100.0 sight___simple_spread_v25
+0.0 alpha######################
+collaborate!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Starting building graph & initialization & restoring...
+WARNING:tensorflow:From /home/work/anaconda3/envs/GT/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/work/anaconda3/envs/GT/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/work/anaconda3/envs/GT/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/work/anaconda3/envs/GT/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/work/anaconda3/envs/GT/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/work/anaconda3/envs/GT/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Building graph & initialization & restoring done in 0.70 seconds
+Start training!
+100 episodes, total time: 13.65, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.04.
+Estimated finish time:  0h45m16s.484
+Time grass: [0.15 0.35 0.3  0.35 0.3  0.5 ], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-14.268854112447595, -14.320833563817931, -16.478733973931558, -11.964835521958316, -16.510881393898394, -13.411799602458117]
+200 episodes, total time: 14.02, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.05.
+Estimated finish time:  0h46m16s.769
+Time grass: [0.5  0.55 0.05 0.3  0.   0.2 ], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-16.66150834315372, -13.17587852022194, -13.76401846461053, -15.392521682335524, -16.68541210648336, -15.358000544767048]
+300 episodes, total time: 13.25, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.04.
+Estimated finish time:  0h43m30s.187
+Time grass: [0.15 1.2  0.05 0.05 0.   0.55], time live: [0.01666667 0.01666667 0.01666667 0.01666667 0.01666667 0.01666667]
+reward: [-13.027774653653594, -14.669186815763917, -15.451541135816736, -17.695106736564703, -13.840557208577815, -13.127979494741885]
+400 episodes, total time: 14.06, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.04.
+Estimated finish time:  0h45m55s.168
+Time grass: [0.25 0.35 0.1  0.75 0.45 0.65], time live: [0. 0. 0. 0. 0. 0.]
+reward: [-10.719947938916778, -13.302182811555827, -16.384293913762676, -12.138246925741393, -11.796834565959715, -11.120595449483965]
+500 episodes, total time: 13.88, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.04.
+Estimated finish time:  0h45m 6s.984
+Time grass: [1.05 0.2  0.4  0.45 0.3  1.3 ], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-9.848376791281698, -12.53248746142653, -14.175814436755326, -11.676163399279826, -11.500060302134232, -12.36929973634639]
+600 episodes, total time: 13.85, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.04.
+Estimated finish time:  0h44m47s. 93
+Time grass: [1.1  0.25 0.45 0.   0.55 0.2 ], time live: [0. 0. 0. 0. 0. 0.]
+reward: [-11.620243783337298, -15.487899763681463, -14.193005752980639, -12.830463465065526, -9.278393729290551, -15.59790863427086]
+700 episodes, total time: 13.12, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.05.
+Estimated finish time:  0h42m12s.175
+Time grass: [0.05 0.   0.15 0.05 0.25 0.  ], time live: [0.01666667 0.01666667 0.01666667 0.01666667 0.01666667 0.01666667]
+reward: [-18.176533717347844, -17.328079582233684, -13.8070413309924, -14.543499016637266, -15.719430072361977, -15.597568416816676]
+800 episodes, total time: 13.31, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.04.
+Estimated finish time:  0h42m34s.645
+Time grass: [0.7  0.   0.3  0.   0.   0.65], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-11.68067276149186, -14.75032331786054, -13.12126762780992, -14.789418149895358, -15.856094445265175, -12.622522901456563]
+900 episodes, total time: 13.13, update time: 0.00 (sample time: 0.00, target action time: 0.00, pure update time: 0.00), save time: 0.05.
+Estimated finish time:  0h41m47s.756
+Time grass: [1.1  0.15 0.35 0.   0.2  0.35], time live: [0.01666667 0.01666667 0.01666667 0.01666667 0.01666667 0.01666667]
+reward: [-10.086941325167777, -14.794677102608976, -15.572674544274363, -13.473625493408884, -15.180469621199824, -15.193872516517066]
+1000 episodes, total time: 14.34, update time: 0.64 (sample time: 0.00, target action time: 0.00, pure update time: 0.64), save time: 0.04.
+Estimated finish time:  0h45m24s.116
+Time grass: [0.2  0.5  0.45 0.3  1.15 0.15], time live: [0.01666667 0.01666667 0.01666667 0.01666667 0.01666667 0.01666667]
+reward: [-13.850555675239516, -12.488516044864806, -13.595592282795659, -15.044883484253138, -12.651994265893833, -15.90187110141223]
+1100 episodes, total time: 16.49, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h51m57s.434
+Time grass: [0.05 0.6  0.35 0.4  0.5  0.15], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-18.528000293519288, -12.801907314279287, -11.028189681203331, -13.94680994310762, -12.33760971018452, -15.24177898382295]
+1200 episodes, total time: 16.59, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h51m58s.513
+Time grass: [0.15 0.5  1.2  0.   0.55 0.2 ], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-19.841372801302136, -13.838593779388683, -11.536718875969724, -16.086376345154612, -15.978343690198276, -12.050375044763296]
+1300 episodes, total time: 16.52, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.65), save time: 0.04.
+Estimated finish time:  0h51m29s.933
+Time grass: [0.45 1.25 1.25 0.25 0.05 0.3 ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-11.740057405630361, -12.409826110112439, -8.71283229129033, -14.069061347056188, -11.024802323605133, -12.242014435975316]
+1400 episodes, total time: 16.38, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h50m47s.376
+Time grass: [0.6  0.2  0.8  0.15 0.55 0.5 ], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-9.074063562017699, -10.791012782932224, -8.341569527275432, -12.964631063025669, -11.013051032560401, -10.060622422798179]
+1500 episodes, total time: 16.36, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.05.
+Estimated finish time:  0h50m26s.880
+Time grass: [1.15 0.7  0.45 0.4  0.   0.25], time live: [0.01666667 0.01666667 0.01666667 0.01666667 0.01666667 0.01666667]
+reward: [-9.715436914767379, -11.000099699360081, -9.030835224413726, -11.967040842921373, -10.238550792300853, -12.74482059243693]
+1600 episodes, total time: 16.54, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h50m42s.613
+Time grass: [0.4  1.15 0.65 1.1  0.85 0.65], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-7.323206011788625, -7.246579560275097, -6.2728354513549665, -9.622423099618794, -5.62900635740823, -7.81235628163858]
+1700 episodes, total time: 16.49, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.05.
+Estimated finish time:  0h50m17s.272
+Time grass: [0.6  1.25 1.15 0.1  0.5  0.95], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-6.7562317405576024, -6.425005694039496, -6.277307845141786, -11.191252654885073, -8.238837827014844, -6.499298507130058]
+1800 episodes, total time: 16.19, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h49m 6s.569
+Time grass: [1.25 0.6  0.75 0.6  1.3  1.25], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-5.870726073186234, -6.289733507301331, -5.544144410964757, -8.101429509450853, -8.027125807453753, -5.875769352618542]
+1900 episodes, total time: 16.72, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h50m25s.804
+Time grass: [0.6  1.05 0.6  0.5  1.   1.  ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-7.138947880842203, -6.7447537276567235, -7.53284110368583, -7.188256595903847, -7.714147418052302, -6.465578089620301]
+2000 episodes, total time: 16.51, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h49m30s.976
+Time grass: [0.55 0.85 0.25 1.1  1.4  1.55], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-6.577795460998526, -5.744667450986962, -6.032817378837672, -5.850805653679875, -6.775821812805447, -6.330854500566078]
+2100 episodes, total time: 16.33, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h48m43s.327
+Time grass: [1.15 0.35 1.   0.75 0.7  0.7 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-7.530985393462757, -8.53559503902299, -7.725187282670264, -10.365890217375146, -7.755043038978778, -7.561756067610503]
+2200 episodes, total time: 16.12, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h47m50s.118
+Time grass: [0.95 0.65 0.45 1.55 0.75 1.25], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-5.701396064742836, -6.82282406073373, -7.347778024900935, -6.104954513472451, -6.591828506206542, -5.370281439458522]
+2300 episodes, total time: 16.25, update time: 2.78 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h47m56s.620
+Time grass: [0.65 0.4  1.05 1.2  0.65 1.4 ], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-7.096263399812891, -8.136727764436612, -6.864045664060808, -7.935880328193187, -7.791740114430736, -8.136782802609314]
+2400 episodes, total time: 16.29, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h47m47s.317
+Time grass: [1.3  1.5  0.4  1.05 2.25 0.8 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-4.645966830467216, -4.599073032829024, -3.7172545131727994, -5.332245642348702, -3.339335930830481, -5.223516051205439]
+2500 episodes, total time: 16.12, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h47m 1s. 79
+Time grass: [0.3  0.7  1.3  0.55 0.5  1.05], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-8.484071195379352, -6.728892045760141, -7.332472120495285, -7.807480232565912, -7.79309411473363, -7.340024205774958]
+2600 episodes, total time: 16.50, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h47m50s.269
+Time grass: [1.   1.15 0.75 0.35 0.95 0.35], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-6.0313001091412834, -8.22677255965792, -6.423002464266586, -8.770044469660581, -6.399132098690221, -6.932556485889727]
+2700 episodes, total time: 16.17, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.05.
+Estimated finish time:  0h46m37s.732
+Time grass: [1.7  0.65 0.25 0.5  0.8  0.9 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-6.722394565591124, -6.006269815107793, -8.446847854083835, -7.014264466938521, -6.551993846786525, -7.322809774434255]
+2800 episodes, total time: 16.56, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h47m28s.121
+Time grass: [0.3  0.55 0.2  1.9  1.35 2.  ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-5.907541995380104, -3.9551315869148005, -7.667044783465831, -2.9237485430044474, -4.859847691323291, -4.651414444767293]
+2900 episodes, total time: 16.13, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h45m58s.113
+Time grass: [0.9  0.85 0.3  0.4  0.45 1.95], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-7.054878028267174, -7.710983081488509, -7.658580938654067, -6.1965856048685835, -6.265298786882541, -4.79909770743952]
+3000 episodes, total time: 16.29, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.05.
+Estimated finish time:  0h46m 9s.298
+Time grass: [1.4  1.3  0.7  0.3  0.8  1.15], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-4.387438059890453, -4.357218454809089, -5.649972648763393, -5.756522766229688, -5.489072245565646, -5.99698505025886]
+3100 episodes, total time: 16.73, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.04.
+Estimated finish time:  0h47m 7s.514
+Time grass: [0.55 0.7  0.3  1.2  0.25 1.5 ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-8.352615784492297, -7.672578888999138, -7.3766324468187126, -7.321871213977656, -7.837390780441797, -6.32617418750669]
+3200 episodes, total time: 16.52, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h46m15s.476
+Time grass: [0.3  1.2  0.4  0.35 0.45 0.7 ], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-8.258380420030651, -7.213679698500168, -9.204882378950611, -8.459289015672303, -9.666722334607744, -8.597190241559165]
+3300 episodes, total time: 16.33, update time: 2.79 (sample time: 0.00, target action time: 0.00, pure update time: 2.79), save time: 0.05.
+Estimated finish time:  0h45m26s.545
+Time grass: [0.25 1.3  1.   1.8  0.85 0.45], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-5.423998728369027, -4.23585138529276, -5.969457335764318, -4.793244429107573, -6.042267234799004, -4.811314033312104]
+3400 episodes, total time: 16.55, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.04.
+Estimated finish time:  0h45m47s.620
+Time grass: [0.5  0.95 0.55 0.1  0.95 0.5 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-8.27541178676114, -8.789560240578268, -8.49681764071305, -8.333379245065665, -7.675894497936608, -8.633017082583185]
+3500 episodes, total time: 16.61, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h45m40s.575
+Time grass: [1.7  0.2  0.05 0.9  0.75 1.6 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-6.839008507933459, -6.6990775145439585, -7.003699806476635, -6.604005870507116, -5.876796351381991, -6.6723777899033845]
+3600 episodes, total time: 16.24, update time: 2.79 (sample time: 0.00, target action time: 0.00, pure update time: 2.78), save time: 0.04.
+Estimated finish time:  0h44m24s. 71
+Time grass: [0.85 0.3  1.   1.4  0.95 0.6 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-4.6991998940346775, -4.8421705644625215, -5.051605775672407, -5.578080667688211, -6.259061861286774, -4.822270479298599]
+3700 episodes, total time: 16.27, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h44m11s.273
+Time grass: [1.45 0.75 0.85 1.7  0.25 1.15], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-5.2837275777469115, -4.2991919986364975, -4.660598848115148, -3.1155738574581693, -4.1896467927376255, -4.267076356297461]
+3800 episodes, total time: 16.40, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h44m16s.256
+Time grass: [1.85 0.35 0.7  0.6  0.5  0.65], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-5.158850165296353, -7.359687796619139, -6.220087856079375, -6.516590677188921, -6.7107780411208635, -6.863281530265597]
+3900 episodes, total time: 16.28, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h43m40s.796
+Time grass: [0.65 0.45 0.4  1.05 1.3  1.2 ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-6.230645048030296, -6.6047296594122304, -6.34028603798966, -6.34902525432586, -6.2386505906695735, -6.0959669000522325]
+4000 episodes, total time: 16.43, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h43m49s.309
+Time grass: [0.9  2.25 0.55 1.3  1.2  0.9 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-4.327313264273859, -2.702896322634273, -3.030328405620889, -1.11318976293196, -3.539304681808853, -4.058146421265221]
+4100 episodes, total time: 16.19, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h42m54s.289
+Time grass: [0.35 0.8  0.6  1.5  0.3  0.9 ], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-7.029014762963025, -5.10543536968787, -6.07216158588418, -4.5190358071376755, -6.3587287128527645, -5.873139393238178]
+4200 episodes, total time: 16.24, update time: 2.80 (sample time: 0.00, target action time: 0.00, pure update time: 2.79), save time: 0.04.
+Estimated finish time:  0h42m45s.512
+Time grass: [1.7  1.2  0.55 1.65 0.95 1.25], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-3.6627526960906627, -4.862168163312655, -4.416514642621479, -3.8935725653714024, -4.920314465487787, -2.8480330576665764]
+4300 episodes, total time: 16.42, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h42m57s.781
+Time grass: [0.3 1.1 2.  0.7 1.  1.2], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-4.365916212396458, -4.7755071986812165, -4.773195520447007, -5.208931856008417, -4.012500203295428, -3.4461859366532286]
+4400 episodes, total time: 16.57, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h43m 4s.277
+Time grass: [1.35 1.45 1.   1.4  1.2  1.25], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-2.2443992162891706, -2.648695620828294, -2.5800690751294164, -3.9523265444028803, -3.7421909772633546, -2.9976126417275624]
+4500 episodes, total time: 16.49, update time: 2.63 (sample time: 0.00, target action time: 0.00, pure update time: 2.62), save time: 0.04.
+Estimated finish time:  0h42m35s.216
+Time grass: [1.95 1.05 0.4  1.05 1.3  2.85], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-1.677400171577067, -2.682377455851845, -3.7018778540113204, -2.340181824209979, -3.5527830301734333, -1.2119291574911135]
+4600 episodes, total time: 16.60, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.04.
+Estimated finish time:  0h42m37s. 96
+Time grass: [1.4  0.7  0.9  1.2  1.1  0.65], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-3.3908156272621204, -3.521202442187905, -5.112768018270041, -3.4832161030467645, -3.484428848744257, -3.721715192949259]
+4700 episodes, total time: 16.46, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h41m58s.935
+Time grass: [1.45 0.25 0.75 0.6  0.75 1.  ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-7.187588730065542, -7.277181988962961, -6.242121262461023, -6.386729746231275, -7.228621782634941, -6.108881597834694]
+4800 episodes, total time: 16.54, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h41m53s.899
+Time grass: [1.3  0.75 0.8  0.7  0.45 0.55], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-5.669495554352009, -6.9961793446360385, -5.243695983863078, -5.4694890167242685, -6.127597495878544, -5.713337993301675]
+4900 episodes, total time: 16.46, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h41m25s.865
+Time grass: [1.05 1.1  1.75 0.4  0.8  1.9 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-4.277636380100389, -3.868003372693682, -3.5177663904685046, -5.576036305177174, -3.94976643224109, -3.4177566377978437]
+5000 episodes, total time: 16.53, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.05.
+Estimated finish time:  0h41m19s.499
+Time grass: [1.25 1.25 2.15 0.9  1.3  0.9 ], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [-3.2314789692415866, -2.848269560686366, -3.297034541030187, -4.253171273834164, -3.472928513754657, -3.902648614413839]
+5100 episodes, total time: 16.74, update time: 2.65 (sample time: 0.00, target action time: 0.00, pure update time: 2.65), save time: 0.04.
+Estimated finish time:  0h41m34s. 24
+Time grass: [1.2  1.05 0.8  0.25 2.15 1.2 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.9120101855852285, -5.384541688250148, -6.049973577283049, -5.111445165846961, -3.70667464317804, -3.354316223894647]
+5200 episodes, total time: 16.53, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h40m46s.994
+Time grass: [2.1  1.9  1.2  1.75 2.65 0.9 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [2.8384972658573635, 2.146020288188266, 1.9360681396308366, 2.888295173265201, 2.7650249371020714, 3.6402078268899976]
+5300 episodes, total time: 16.53, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h40m29s.874
+Time grass: [0.75 1.45 0.2  0.25 0.75 3.1 ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-4.416951501768261, -4.2353318111401155, -4.9775104483027715, -4.251970013552935, -4.370653984351511, -2.7115280106720374]
+5400 episodes, total time: 16.59, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h40m21s.936
+Time grass: [0.7  0.5  1.2  0.55 0.45 1.45], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-6.014275732957949, -7.803870021617408, -5.437338773674102, -7.768905485541974, -5.885005843076077, -5.298856111077869]
+5500 episodes, total time: 16.47, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h39m48s.398
+Time grass: [1.   0.95 1.2  0.75 0.45 2.95], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-2.825255559080925, -4.014320180054713, -3.228369729508791, -3.6453027056798653, -4.318165281743805, -2.061056447039883]
+5600 episodes, total time: 16.54, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h39m42s.353
+Time grass: [2.5  0.45 1.   1.15 0.5  4.15], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-1.0192610535276394, -2.583335647335332, -1.8103402714504895, -2.81516805245638, -2.556933737661108, 1.6398894256899375]
+5700 episodes, total time: 16.51, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h39m21s.  2
+Time grass: [1.3  0.65 2.3  1.25 0.85 1.35], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-2.2422571400527316, -4.906244116069015, -3.9971854809754896, -3.1930369927986346, -5.297985960412589, -1.769539630349176]
+5800 episodes, total time: 16.52, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.05.
+Estimated finish time:  0h39m 5s.571
+Time grass: [1.5 0.7 0.7 2.3 1.2 1.7], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [0.08996221063265346, -2.4808882158211114, -2.3408248045320534, -0.7137128703937409, -2.443008424180366, -1.4330357107843787]
+5900 episodes, total time: 15.93, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h37m25s.734
+Time grass: [0.5  0.55 0.6  1.4  1.25 1.65], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-4.344309858251592, -5.151770907499664, -5.822580586884234, -4.579333791479504, -5.02888308055706, -3.219163118881119]
+6000 episodes, total time: 16.59, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h38m42s. 97
+Time grass: [0.95 0.65 1.6  2.35 0.8  1.85], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-1.6722159438521267, -3.0787831236928036, -2.904229462130364, -1.6487773774708163, -2.7676867530190554, -0.5748347565671315]
+6100 episodes, total time: 16.38, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h37m56s.879
+Time grass: [0.85 1.   1.85 1.85 1.35 3.15], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-0.13141939292886376, -0.8904963558169348, 0.3907858556595213, -0.06898357116350766, -0.9329757361783286, 1.6039686288094752]
+6200 episodes, total time: 16.51, update time: 2.62 (sample time: 0.00, target action time: 0.00, pure update time: 2.61), save time: 0.05.
+Estimated finish time:  0h37m59s. 50
+Time grass: [0.75 0.55 0.7  1.1  2.15 1.5 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-3.482196303229555, -5.527169794486317, -4.129955879688369, -3.244038824811484, -3.1982063351413292, -3.487601375768083]
+6300 episodes, total time: 16.23, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h37m 3s.472
+Time grass: [2.05 0.2  0.6  0.5  1.2  3.75], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-1.1996617146776933, -4.953473914519423, -3.168506690676929, -3.8566948108994232, -3.6190572909043155, -0.19300000134797143]
+6400 episodes, total time: 16.70, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.05.
+Estimated finish time:  0h37m51s.715
+Time grass: [1.45 1.65 0.6  0.7  1.   3.15], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-1.0086970723050828, -1.866980928525739, -1.889420075991414, -3.3664847839667345, -1.8344501003381808, 0.8155671845357135]
+6500 episodes, total time: 16.58, update time: 2.78 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h37m18s.734
+Time grass: [0.75 1.5  0.1  0.5  1.4  2.15], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-5.421312820781681, -5.014548686436172, -4.917204553366313, -3.837804424193095, -5.074650252098741, -2.0746885132246176]
+6600 episodes, total time: 16.42, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h36m40s.114
+Time grass: [1.05 0.5  1.25 2.3  1.9  2.35], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [-0.6367741719063581, -2.4585220119104667, -1.1274364480560612, 0.1597030071273593, 0.20407066897116238, -0.010699429149098761]
+6700 episodes, total time: 16.25, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h36m 0s.905
+Time grass: [0.45 0.9  1.95 0.45 0.65 1.2 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-4.42532304550792, -3.922993745424885, -4.379447613009722, -5.967666693920283, -5.853103016007806, -2.6902224201660445]
+6800 episodes, total time: 16.10, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h35m24s.646
+Time grass: [1.05 0.85 0.65 1.   0.8  1.55], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-3.426777482422581, -4.764821663663345, -4.608308121840846, -5.535127199124396, -4.8912202708232915, -3.4050325433122546]
+6900 episodes, total time: 16.14, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.05.
+Estimated finish time:  0h35m14s.852
+Time grass: [3.2  1.45 1.35 0.6  0.6  2.8 ], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [3.0968446276394457, -0.5944967886938126, 0.4697294450436922, 1.971817974273393, 0.1978250331927332, 2.484828027476678]
+7000 episodes, total time: 16.36, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.05.
+Estimated finish time:  0h35m26s.656
+Time grass: [3.25 0.5  1.3  1.3  0.9  2.3 ], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-0.47849653858840674, -0.9604701084385493, -0.5702029820470094, -1.9010771848392793, -0.6378254084790589, 0.5439836210681965]
+7100 episodes, total time: 16.28, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h35m 0s.  0
+Time grass: [2.25 1.1  1.7  1.05 1.55 1.7 ], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.4175527905637816, -2.185374323457837, -0.5964101801747221, -2.0948242295120165, -2.061344098073305, -1.9379219195430566]
+7200 episodes, total time: 16.36, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h34m53s.735
+Time grass: [2.5  0.8  0.7  2.05 1.15 1.75], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [0.5129020591604256, -1.263665081425819, -0.7301762204358729, -0.07530724788316748, 0.5177568104338023, -0.3998620305402586]
+7300 episodes, total time: 16.22, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h34m20s.174
+Time grass: [1.85 1.1  0.95 0.7  1.05 0.5 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-3.5216613029049597, -4.626732912850117, -3.441902597295928, -4.962571261648185, -3.3322680888451606, -3.969103285368013]
+7400 episodes, total time: 16.58, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.05.
+Estimated finish time:  0h34m48s.603
+Time grass: [1.45 1.35 1.65 0.65 1.3  1.55], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-2.977757662465029, -3.3375308133230375, -2.8998604910536403, -3.339943456236756, -3.277015189707119, -1.2922039092391004]
+7500 episodes, total time: 16.46, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h34m17s.231
+Time grass: [1.6  1.35 0.95 0.8  1.5  0.65], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-2.5384778722520096, -4.037362444991519, -3.1789179131251677, -3.5678771217035967, -3.3734423097149366, -2.939763649744827]
+7600 episodes, total time: 16.23, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h33m32s.619
+Time grass: [2.9  1.15 0.65 1.95 0.6  1.15], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-0.4699280895287826, -3.991204796553075, -2.0763401982813763, -2.8179740156324793, -2.227572334762191, -1.2172109626355365]
+7700 episodes, total time: 16.61, update time: 2.63 (sample time: 0.00, target action time: 0.00, pure update time: 2.63), save time: 0.04.
+Estimated finish time:  0h34m 2s.885
+Time grass: [3.6  1.35 2.3  0.7  0.15 1.8 ], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [1.760632212441233, -2.330306951968139, 0.04549982100937493, -0.3345512435059484, -2.308645628694393, -0.3512930141064844]
+7800 episodes, total time: 16.37, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h33m17s.717
+Time grass: [1.55 1.55 0.7  1.   1.2  0.6 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-3.5848888354027446, -3.4996716739545484, -3.815669356822012, -5.545895704972442, -4.684953623610507, -2.719645718545591]
+7900 episodes, total time: 16.28, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h32m49s.812
+Time grass: [0.95 1.   0.95 1.7  1.75 1.15], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.508532305705394, -2.4526187933777033, -2.635487326334384, -2.444496359073682, -2.878479895322737, -3.4912555622082926]
+8000 episodes, total time: 16.36, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h32m42s.823
+Time grass: [4.2  1.25 0.75 1.   1.65 1.4 ], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [2.7217364721575943, 1.0470371161776615, 0.03331469884352143, -0.7620045591405314, 1.2372644006618354, 2.105803488158967]
+8100 episodes, total time: 16.19, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h32m 6s.669
+Time grass: [1.65 1.55 0.85 1.5  1.15 3.1 ], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.43194844524199505, -0.15116425845164835, -1.5869803320636726, -0.44758296036458034, -1.0850683094646127, 1.6966546644520566]
+8200 episodes, total time: 16.26, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.05.
+Estimated finish time:  0h31m58s.987
+Time grass: [1.9  1.25 1.55 3.2  0.3  1.5 ], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.4177937849507562, -1.3412101889905017, -0.7203392645409912, -1.9534454347375394, -2.0033127913550386, -0.40715464244925015]
+8300 episodes, total time: 16.26, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h31m42s.707
+Time grass: [4.05 2.1  0.55 0.1  1.45 2.7 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [5.615548837356451, 2.11598213967286, 3.1740308097749406, 2.6872063247435305, 3.131082682870863, 4.181100390235275]
+8400 episodes, total time: 16.32, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h31m33s.228
+Time grass: [2.15 2.4  0.35 0.6  1.4  3.05], time live: [0.23333333 0.23333333 0.23333333 0.23333333 0.23333333 0.23333333]
+reward: [0.015685357543322898, -1.5770653129731766, -0.008476172821832417, -1.9129119770199232, -1.8448360582976515, 1.4187697151653602]
+8500 episodes, total time: 16.12, update time: 2.78 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.05.
+Estimated finish time:  0h30m53s.964
+Time grass: [1.2  1.   2.05 0.55 1.55 2.45], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-0.9572659282653622, -0.40396485875410004, -1.6873217307588562, -1.5878612335170819, -1.7759696851429783, -1.2423552589205438]
+8600 episodes, total time: 16.38, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h31m 7s.602
+Time grass: [1.65 0.7  0.45 0.7  1.85 2.45], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-1.7317957822841425, -3.0612205692132477, -3.573699442594478, -2.9703022988968777, -5.087458021552964, -2.9029083151158717]
+8700 episodes, total time: 16.24, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.05.
+Estimated finish time:  0h30m35s.251
+Time grass: [3.15 1.   1.55 0.85 0.1  2.05], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.44776748604099187, -2.653668993215926, -2.381560639825948, -0.5548513600273759, -2.3846398345262263, -0.4001618764850557]
+8800 episodes, total time: 16.44, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h30m41s.632
+Time grass: [1.65 1.55 1.6  0.45 1.25 1.2 ], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-2.875865682259735, -4.90383986372033, -2.9055262103742736, -4.3035347488028695, -3.741721288417689, -3.0460338458480316]
+8900 episodes, total time: 16.26, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.05.
+Estimated finish time:  0h30m 5s.213
+Time grass: [1.75 1.1  0.9  1.15 0.25 1.9 ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-1.799006311184316, -3.221966011591978, -2.865003358256797, -3.058489533705276, -4.269266976492544, -1.2011949513456437]
+9000 episodes, total time: 16.40, update time: 2.79 (sample time: 0.00, target action time: 0.00, pure update time: 2.79), save time: 0.04.
+Estimated finish time:  0h30m 3s.596
+Time grass: [1.75 2.7  0.3  1.65 2.2  0.7 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-1.1628498466117683, -1.4211483023990243, -1.68919068760106, -2.9104720042285046, -1.0407077442768646, -1.943046672055657]
+9100 episodes, total time: 16.49, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h29m57s.690
+Time grass: [1.2  1.15 1.4  1.15 1.2  1.35], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.2096748505486015, -2.518504049989141, -2.193550554512005, -2.6672456351631313, -3.3388193116752722, -1.7518919647376687]
+9200 episodes, total time: 15.95, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h28m42s.822
+Time grass: [2.2  2.45 3.95 1.95 0.85 0.5 ], time live: [0.25 0.25 0.25 0.25 0.25 0.25]
+reward: [3.70530408821784, 2.583390920309772, 4.0235296294686815, 2.5309478995528965, 1.9174122687895276, 2.0862154547759966]
+9300 episodes, total time: 16.36, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h29m10s.684
+Time grass: [3.1  0.6  0.8  0.4  0.3  3.25], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-1.3263758611151217, -1.7386709554289468, -2.4248456215260807, -3.438416324802246, -0.3355060466759703, -1.981480506470478]
+9400 episodes, total time: 16.32, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h28m49s.600
+Time grass: [1.3 1.  1.4 0.6 1.5 2. ], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-1.0514163501744984, -3.9976766758571443, -1.225967633083439, -4.150363659276321, -3.0655878434623953, 0.3994451028155172]
+9500 episodes, total time: 16.40, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h28m42s. 78
+Time grass: [2.95 1.85 1.5  1.75 0.95 1.  ], time live: [0.25 0.25 0.25 0.25 0.25 0.25]
+reward: [1.3735045838232605, -0.7252971873543532, 1.139143636235814, 0.5562787766065185, 1.1639842687664954, 0.7988015468978672]
+9600 episodes, total time: 16.41, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h28m26s.565
+Time grass: [1.15 0.65 0.85 1.4  2.85 2.85], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-0.4637305213109221, -2.9888699372509437, -0.5935920888534513, -3.75196640506939, -1.9565849620783928, -0.2611293397128135]
+9700 episodes, total time: 16.47, update time: 2.63 (sample time: 0.00, target action time: 0.00, pure update time: 2.63), save time: 0.05.
+Estimated finish time:  0h28m16s.686
+Time grass: [1.95 1.1  1.6  1.45 0.55 2.25], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-0.16535048154163118, -2.4023798173302198, -1.3984523992399862, -1.8979597442524512, -1.3960959709832186, 0.29776403029956533]
+9800 episodes, total time: 16.32, update time: 2.80 (sample time: 0.00, target action time: 0.00, pure update time: 2.80), save time: 0.04.
+Estimated finish time:  0h27m45s. 30
+Time grass: [2.3  2.1  0.4  0.45 2.45 1.35], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-0.23084289427680407, -1.0840937757902442, -1.7378673473497739, -2.280411582738189, -1.593973323835956, -1.4345217263344716]
+9900 episodes, total time: 16.05, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h27m 0s.759
+Time grass: [1.4  1.1  1.5  1.35 1.25 1.1 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.6801528309435354, -3.931265025104042, -3.262446551449375, -3.584713279997088, -3.105317165293733, -3.056990171974547]
+10000 episodes, total time: 16.12, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h26m51s.741
+Time grass: [2.05 1.15 0.85 1.15 0.8  1.2 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-2.332181738863133, -4.254707728340269, -3.985418960103002, -4.010816383703399, -4.024288899969398, -3.200221739165626]
+10100 episodes, total time: 16.24, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h26m47s.866
+Time grass: [4.3  1.05 1.4  1.15 1.55 0.75], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.9331876582811702, -0.3969612333975117, 1.763368745816173, -0.3152539822340098, 0.2736536671460184, 0.9331085252767026]
+10200 episodes, total time: 16.31, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.05.
+Estimated finish time:  0h26m38s.775
+Time grass: [2.85 1.   1.35 1.2  1.85 1.75], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.1903915201899138, 0.42207863479524155, -1.0698912925196022, -1.48188260217244, 1.5273550327078858, 1.3635025612430378]
+10300 episodes, total time: 16.20, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h26m11s. 38
+Time grass: [2.65 0.95 1.15 0.65 0.85 2.05], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [-1.1521597136825463, -3.475701218637675, -4.074162715038153, -3.2908043348048523, -1.9007171495639796, -1.0606333668407946]
+10400 episodes, total time: 16.13, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.05.
+Estimated finish time:  0h25m48s.556
+Time grass: [1.35 0.5  0.9  1.   0.75 1.9 ], time live: [0.03333333 0.03333333 0.03333333 0.03333333 0.03333333 0.03333333]
+reward: [-3.2313173837612736, -6.2328463498019495, -5.043495234756014, -4.558238147385642, -4.905587286089606, -2.319794204924177]
+10500 episodes, total time: 16.25, update time: 2.79 (sample time: 0.00, target action time: 0.00, pure update time: 2.78), save time: 0.04.
+Estimated finish time:  0h25m43s.754
+Time grass: [4.5  0.75 2.15 1.95 0.95 3.05], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [7.3905561813811165, 3.408944502097087, 4.791775679320582, 4.767456104738969, 4.191935280083314, 4.314548382420601]
+10600 episodes, total time: 16.04, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h25m 8s. 82
+Time grass: [1.6  0.4  1.8  0.7  2.15 1.6 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-0.8868051689815939, -3.521028734781177, -2.7874394397588365, -1.6018491184343469, -2.567179707130097, -1.8272203667460354]
+10700 episodes, total time: 16.55, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h25m38s.848
+Time grass: [2.2  0.55 1.4  1.6  1.85 1.95], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-0.611656815940109, -1.0556771683211301, -0.22345320604303426, -1.1242741212643517, -0.31443013279547405, -1.131298439763063]
+10800 episodes, total time: 16.47, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h25m14s.992
+Time grass: [0.8  1.35 2.35 1.05 1.2  1.2 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-0.3707761663007296, -4.129620089705167, -1.0907289344166555, -3.298966623108555, -2.484665906509624, -1.6307179031959536]
+10900 episodes, total time: 16.45, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h24m56s.722
+Time grass: [1.95 0.5  2.75 1.65 1.4  2.5 ], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [2.5761339738380467, 0.23963371101863248, 0.9554866376345489, 0.6614795600271888, 1.4399010683006015, 0.9722195184153124]
+11000 episodes, total time: 16.42, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h24m37s.501
+Time grass: [3.5  1.1  1.3  1.55 1.55 2.25], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [2.836987271510895, 1.7233248347923624, 1.2953778712530353, 0.4085378126506126, 0.6532147467087073, 1.6514695264300605]
+11100 episodes, total time: 16.03, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.05.
+Estimated finish time:  0h23m46s.752
+Time grass: [3.75 1.15 1.45 2.1  1.35 0.85], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [2.6636432253865108, 0.3821719958963974, 2.1373923489911077, 0.706320239906322, 2.126424664953672, 1.3049162356735953]
+11200 episodes, total time: 16.29, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h23m53s.820
+Time grass: [1.95 1.1  1.4  1.65 2.7  0.65], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [3.571314764359431, 1.1276391742156222, 1.9346960401209934, 2.4919655991903236, 2.311864877477265, 0.5841703209684468]
+11300 episodes, total time: 16.15, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h23m25s.341
+Time grass: [2.75 1.5  0.9  1.85 0.45 2.55], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [1.9874439730648163, -1.3722659291328736, -0.2509647964430357, 0.1932059684566531, -0.7819176194621799, 0.2963759745320466]
+11400 episodes, total time: 16.48, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h23m37s.364
+Time grass: [0.9  0.4  1.9  1.3  2.2  1.35], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-0.2934940984395141, -3.045359539894105, -1.8818916631508202, -3.8646200385037117, -2.243435220525943, -2.0557570126997367]
+11500 episodes, total time: 16.25, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.04.
+Estimated finish time:  0h23m 1s.305
+Time grass: [2.5  1.15 1.05 1.7  1.2  0.85], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [0.03258044531025535, -2.915462737231381, -1.1778368845549656, -1.8603199337653105, -1.0241234327930986, -3.205467170770617]
+11600 episodes, total time: 16.62, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.04.
+Estimated finish time:  0h23m16s.453
+Time grass: [2.5  3.35 0.75 1.65 0.65 2.8 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [3.1277294830917155, 1.9641245854659162, 1.3938303711831292, 1.58232769935027, 0.12215605011843741, 2.0656353502035545]
+11700 episodes, total time: 16.06, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.05.
+Estimated finish time:  0h22m13s. 71
+Time grass: [3.7  1.65 1.2  1.2  2.7  1.25], time live: [0.21666667 0.21666667 0.21666667 0.21666667 0.21666667 0.21666667]
+reward: [3.7695573499803556, 2.551549065624734, 2.4947894366077756, 3.0961078199867478, 3.860594283549019, 3.7839853269980224]
+11800 episodes, total time: 16.51, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h22m33s.437
+Time grass: [2.05 0.35 2.6  0.65 1.6  1.9 ], time live: [0.21666667 0.21666667 0.21666667 0.21666667 0.21666667 0.21666667]
+reward: [0.20546450590239557, -2.729465285937398, -0.3764374944779603, -1.065619531556165, -1.2511349717902873, -0.4462918476372123]
+11900 episodes, total time: 16.24, update time: 2.81 (sample time: 0.00, target action time: 0.00, pure update time: 2.80), save time: 0.04.
+Estimated finish time:  0h21m55s.594
+Time grass: [3.2  0.35 1.5  1.3  0.45 1.7 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.1383785912390505, -0.4743080613825197, -0.10783415255615611, -1.1146409441053664, -0.7759284888717404, 1.1050812473277378]
+12000 episodes, total time: 16.28, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.05.
+Estimated finish time:  0h21m42s.182
+Time grass: [0.6  1.05 1.25 3.   2.2  1.4 ], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [1.6485360241658515, -0.9757732170456379, -0.3845628327885639, -0.37954795442293626, 0.741989117742831, -1.8666024199124305]
+12100 episodes, total time: 16.24, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.05.
+Estimated finish time:  0h21m22s.689
+Time grass: [2.35 1.55 1.25 3.25 1.75 0.2 ], time live: [0.21666667 0.21666667 0.21666667 0.21666667 0.21666667 0.21666667]
+reward: [0.6764601657572857, -0.16660785868431183, 2.23091280912798, 0.11330617711564264, -0.10850089210871908, 0.4473275026189561]
+12200 episodes, total time: 16.05, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h20m51s.618
+Time grass: [2.7  1.25 1.95 0.9  2.   1.45], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.5824559842760133, -0.8060890269018308, -0.045964375177302265, 1.2503624131393127, 1.0770860394864958, -0.5670708282456342]
+12300 episodes, total time: 16.27, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h20m52s.987
+Time grass: [1.35 0.6  0.7  0.6  0.55 1.4 ], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-3.2979550551488224, -4.9804350583345505, -3.539366966010136, -5.375351620497282, -5.388006236363503, -4.918766865717956]
+12400 episodes, total time: 16.17, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.05.
+Estimated finish time:  0h20m28s.684
+Time grass: [2.   0.6  2.5  1.6  0.85 1.35], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [2.2053878683254298, 0.6514371380909832, 0.23644330890565923, 2.4540234860632837, 0.5344395337218371, 0.20281963006205225]
+12500 episodes, total time: 16.45, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h20m33s.677
+Time grass: [1.95 0.9  2.05 1.1  1.45 1.6 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [0.027691387096420206, -2.0375604734855215, -0.020218371159877967, -2.0794217765441085, -1.2590579340961872, -1.4517122744610742]
+12600 episodes, total time: 16.44, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.05.
+Estimated finish time:  0h20m16s.675
+Time grass: [2.1  2.15 1.9  1.6  2.5  0.8 ], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [5.436176763841388, 4.782826688748994, 5.370433971420816, 3.863392047034955, 4.7165174594990775, 5.266852827677528]
+12700 episodes, total time: 16.39, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h19m56s.138
+Time grass: [3.   0.35 1.25 0.95 1.15 0.3 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-1.7235623908265918, -5.037396514574075, -1.3360716676543265, -4.484314210196896, -3.570593004299296, -2.954005258970361]
+12800 episodes, total time: 16.26, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h19m30s.555
+Time grass: [5.25 1.05 0.95 0.75 1.8  0.95], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.7885503757911825, -0.28945126682127326, 1.0997277522126314, -1.3002714328389384, 0.7634665189736092, 2.376218849570569]
+12900 episodes, total time: 16.26, update time: 2.81 (sample time: 0.00, target action time: 0.00, pure update time: 2.81), save time: 0.05.
+Estimated finish time:  0h19m14s.140
+Time grass: [2.45 0.9  0.9  0.45 1.9  0.75], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-1.2958655684286409, -2.330641717714907, -2.4031416821286653, -2.2884265577682616, -2.779223391696239, -2.518375192464357]
+13000 episodes, total time: 16.33, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h19m 2s.774
+Time grass: [1.6  0.9  1.75 0.55 1.05 1.35], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-1.4740310853778635, -2.749263743667253, -1.5964685613044083, -4.035864168947847, -2.8178686520573044, -2.762329075567726]
+13100 episodes, total time: 16.48, update time: 2.79 (sample time: 0.00, target action time: 0.00, pure update time: 2.78), save time: 0.05.
+Estimated finish time:  0h18m57s. 69
+Time grass: [0.35 1.4  3.3  1.4  1.2  3.1 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [0.6062376092511947, -1.7020031383604668, 1.028255729552353, 0.4708960199335658, 2.1760695683621085, 1.821034124052082]
+13200 episodes, total time: 16.58, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h18m47s.324
+Time grass: [2.85 0.8  1.65 2.25 1.25 1.55], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [1.2818263931101757, -1.2044549379854939, 1.0844252353334476, -0.862539793617351, -0.6134064318268005, -0.4631368216318907]
+13300 episodes, total time: 16.23, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h18m 7s.553
+Time grass: [2.3  1.05 3.5  1.6  1.9  1.35], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [4.11623717727728, 3.63012308834342, 4.111583203596862, 2.9006036166800797, 3.895417059260312, 1.2900458610070573]
+13400 episodes, total time: 16.33, update time: 2.78 (sample time: 0.00, target action time: 0.00, pure update time: 2.78), save time: 0.04.
+Estimated finish time:  0h17m57s.573
+Time grass: [0.55 1.65 2.6  1.85 0.45 3.1 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [0.23900501318098427, -1.2321353918587366, 0.43559362936707335, -0.001463002876092645, -0.3550150400557576, 0.23810526108188776]
+13500 episodes, total time: 16.62, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.04.
+Estimated finish time:  0h18m 0s.579
+Time grass: [1.05 2.   4.15 1.3  0.95 2.  ], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [2.683615419582448, 0.27883453647071327, 3.1115942070546487, 1.0378103669641587, 0.810487616345845, 1.1754188342204803]
+13600 episodes, total time: 16.28, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.05.
+Estimated finish time:  0h17m21s.855
+Time grass: [1.25 0.2  2.35 0.4  0.95 2.05], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-1.519904171674184, -3.8189805744491863, -3.1394060127843226, -2.7599647642849736, -4.59362902188877, -2.337337263743318]
+13700 episodes, total time: 16.26, update time: 2.78 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h17m 4s.361
+Time grass: [2.5  0.75 0.7  0.9  0.35 0.75], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-3.393217251250806, -4.050666670225388, -3.6953832812447986, -4.768690983546916, -4.9660501344206125, -3.144254719740714]
+13800 episodes, total time: 16.52, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h17m 4s.331
+Time grass: [0.45 0.65 4.5  3.25 1.2  1.35], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [1.834951700922008, 0.9616752522308847, 2.8754370685740556, 1.7484905812079305, 0.810668781971571, 2.3466693111038515]
+13900 episodes, total time: 16.48, update time: 2.64 (sample time: 0.00, target action time: 0.00, pure update time: 2.64), save time: 0.05.
+Estimated finish time:  0h16m45s.568
+Time grass: [1.25 1.3  2.4  1.35 1.75 0.55], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [0.31697955599085254, -0.701367272289297, 1.2865231546775182, -0.07237577302592194, -0.7146866086855395, 0.4900310941223747]
+14000 episodes, total time: 16.71, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h16m42s.850
+Time grass: [1.8  1.9  1.85 0.65 1.85 1.15], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-1.7356793360895018, -1.0787115361661523, -0.03185460830384938, -1.5288520069478568, -0.3698113446048684, -0.9522063583561892]
+14100 episodes, total time: 16.30, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.67), save time: 0.04.
+Estimated finish time:  0h16m 1s.607
+Time grass: [3.9  2.85 2.65 1.4  1.95 2.05], time live: [0.26666667 0.26666667 0.26666667 0.26666667 0.26666667 0.26666667]
+reward: [7.351749308537054, 6.950102579450198, 6.818949298792958, 5.580215147623397, 5.134302155387297, 6.026011891904391]
+14200 episodes, total time: 16.20, update time: 2.80 (sample time: 0.00, target action time: 0.00, pure update time: 2.80), save time: 0.04.
+Estimated finish time:  0h15m39s.613
+Time grass: [1.55 1.3  0.95 0.4  1.55 1.55], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-2.461728186128576, -2.561724962881151, -3.0090536317018, -3.5624250509269957, -2.129210027572495, -3.5097688700447214]
+14300 episodes, total time: 16.05, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h15m14s.897
+Time grass: [2.55 1.4  4.5  1.4  1.4  2.15], time live: [0.23333333 0.23333333 0.23333333 0.23333333 0.23333333 0.23333333]
+reward: [4.129694324872164, 2.6220671034844867, 3.7154150375054966, 2.543085978626524, 3.0596151098901165, 3.6485945948572693]
+14400 episodes, total time: 16.45, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.70), save time: 0.04.
+Estimated finish time:  0h15m21s.185
+Time grass: [2.45 2.   1.3  0.45 1.05 1.05], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-0.9940764986854209, -1.4043318797122661, -1.6213953693438654, -1.9111880589220178, -1.3855706501823333, -1.553355120103652]
+14500 episodes, total time: 16.47, update time: 2.70 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.04.
+Estimated finish time:  0h15m 6s.124
+Time grass: [0.6  1.1  3.1  0.65 1.95 0.75], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-4.132849960435909, -2.5216844683024187, -1.5755313708237157, -2.227833397176731, -1.998874607152033, -2.4410234041015824]
+14600 episodes, total time: 16.64, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.05.
+Estimated finish time:  0h14m58s.689
+Time grass: [1.75 1.2  2.9  1.05 1.85 1.65], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [3.0018255896202684, 0.9387356481666658, 2.2632427648189255, 0.6152000145856188, 1.7094778256153123, -0.27032291395349717]
+14700 episodes, total time: 16.86, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h14m53s.493
+Time grass: [2.2  0.65 1.95 0.8  1.   0.5 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-2.9455370232890155, -4.942538877568324, -1.867894866181651, -3.682501893935032, -3.1740772953548513, -3.8613429922361675]
+14800 episodes, total time: 16.12, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h13m58s.416
+Time grass: [2.55 2.2  1.85 1.05 1.25 1.45], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [1.1349193796046082, 0.5152590318485976, 0.9463257146938944, 0.07998697439447851, 0.741739143939329, 0.07968145173962879]
+14900 episodes, total time: 16.19, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h13m45s.911
+Time grass: [2.   1.25 1.95 2.   0.65 0.95], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-0.9133294944877377, -2.8579234058124285, -0.6163523233200754, -1.9435765029498953, -3.2896756999822117, -1.1417533397287998]
+15000 episodes, total time: 16.32, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.05.
+Estimated finish time:  0h13m36s.240
+Time grass: [1.5  2.05 2.65 0.9  1.9  1.2 ], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [0.5026897500733679, 0.19684844294061016, 0.9424761654819385, -0.12809929860861144, 0.4907234014010868, 0.142568251299143]
+15100 episodes, total time: 16.20, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h13m13s.688
+Time grass: [1.8  1.3  1.15 1.2  0.95 0.4 ], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-3.397507627651099, -4.020919018101058, -1.8776020219242249, -4.159400017641308, -4.345965198933351, -3.623928252100394]
+15200 episodes, total time: 16.12, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h12m53s.780
+Time grass: [1.25 2.3  4.2  1.2  0.85 1.9 ], time live: [0.2 0.2 0.2 0.2 0.2 0.2]
+reward: [2.7580912512179236, 3.239292585933802, 6.099892137716551, 3.223931121613051, 2.4906771415082467, 3.946633303343108]
+15300 episodes, total time: 16.77, update time: 2.65 (sample time: 0.00, target action time: 0.00, pure update time: 2.64), save time: 0.04.
+Estimated finish time:  0h13m 8s.424
+Time grass: [1.3  2.15 2.1  2.7  0.4  0.95], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [0.974563096744691, -0.4236531259333932, -0.47607660749557157, -0.2496470454764209, -1.9152363593514337, -0.631450524723947]
+15400 episodes, total time: 16.58, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h12m42s.495
+Time grass: [1.3  0.3  2.2  0.65 1.05 2.1 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-1.0870475927202525, -3.3038917099786005, -0.5957240338463514, -2.8314845929772448, -1.0023720385151038, -1.8450581363883025]
+15500 episodes, total time: 16.54, update time: 2.64 (sample time: 0.00, target action time: 0.00, pure update time: 2.63), save time: 0.04.
+Estimated finish time:  0h12m24s.344
+Time grass: [2.85 0.75 1.9  0.4  0.75 1.9 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-0.36704292837870256, -2.8066717169200923, -0.07473079766630311, -2.9002986502897654, -0.9786049138927151, -1.7690763563507605]
+15600 episodes, total time: 16.16, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h11m51s.107
+Time grass: [2.3  1.9  2.35 1.6  0.7  1.2 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [4.157988635347632, 2.6716239994577626, 4.3389290882124865, 2.5186606889614307, 2.6416792885434064, 1.5315278018192575]
+15700 episodes, total time: 16.46, update time: 2.71 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h11m47s.668
+Time grass: [3.65 2.85 1.35 1.15 0.95 0.55], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [3.1621747951648453, 2.9656217467217174, 3.51988789777012, 0.7557352810107982, 1.42800018931216, 1.800459957661682]
+15800 episodes, total time: 16.44, update time: 2.64 (sample time: 0.00, target action time: 0.00, pure update time: 2.63), save time: 0.04.
+Estimated finish time:  0h11m30s.669
+Time grass: [2.05 0.95 2.45 2.15 0.75 1.7 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [1.7782468633387787, 0.6849563507993943, 2.2911311661775224, 1.010413021552797, 1.414239701364228, 1.0113193550606432]
+15900 episodes, total time: 16.50, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h11m16s.598
+Time grass: [1.6  1.95 1.2  0.9  0.6  1.25], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-1.5186435144293005, -1.6739053903127847, -2.5812946958299405, -2.599039270160509, -5.562394400928673, -3.002065828683432]
+16000 episodes, total time: 16.77, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h11m10s.785
+Time grass: [0.95 0.3  1.55 1.2  0.9  1.8 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.9939554455245614, -3.8321514057962296, -3.823259771113085, -3.2342764499551206, -2.575507062134656, -3.2569167653599846]
+16100 episodes, total time: 16.13, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h10m29s. 81
+Time grass: [4.9  0.6  2.1  0.5  0.75 1.6 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [1.012280082009329, -0.17707673482179143, 0.8648552671893803, -0.7126084067702159, -0.8074339472175949, 0.6760489385333027]
+16200 episodes, total time: 16.62, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.71), save time: 0.04.
+Estimated finish time:  0h10m31s.404
+Time grass: [1.1 1.2 3.5 0.5 2.1 1.8], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [0.48415151207518203, -1.3645791506777307, -0.42454346044791436, -0.8632927208274029, 0.39138962626982143, -0.24764926090649758]
+16300 episodes, total time: 16.78, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.05.
+Estimated finish time:  0h10m20s.775
+Time grass: [1.4  1.45 2.15 0.75 1.4  1.15], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.7720517466889567, 1.3777596544611683, 1.7267397138327827, -0.1841299199307862, 0.913951607607013, 0.8038886192179049]
+16400 episodes, total time: 16.27, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h 9m45s.594
+Time grass: [0.6  0.85 0.75 0.1  1.25 2.45], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-3.879941783844687, -5.1172668315276155, -4.983387046213837, -5.2516314006319265, -5.005444385090255, -5.618285112494741]
+16500 episodes, total time: 16.44, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h 9m35s.523
+Time grass: [1.65 0.9  2.15 0.85 1.35 1.1 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-2.3128087523411045, -2.860931051667632, -1.5121984300723463, -4.760895215679687, -3.7060503496267985, -2.8065764728701366]
+16600 episodes, total time: 16.26, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h 9m12s.692
+Time grass: [1.9  0.35 2.45 0.7  0.8  0.5 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-3.649253409686376, -4.116274773653274, -2.1809280947043583, -3.970807692314062, -3.9804897305887024, -4.150965094556465]
+16700 episodes, total time: 16.25, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.05.
+Estimated finish time:  0h 8m56s.327
+Time grass: [2.05 2.05 0.7  2.   2.3  0.55], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [0.4376130919511505, -0.8969835965712072, -0.21324715372349354, -0.745931914057345, -1.0447508729405803, -1.7845284853629928]
+16800 episodes, total time: 16.52, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h 8m48s.488
+Time grass: [2.5  1.45 0.7  0.7  1.95 1.8 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [0.8551493586110416, -1.1831037335251096, -0.8207603138531013, -0.2163702981803241, 0.46365306141135, -1.3852241506624394]
+16900 episodes, total time: 16.16, update time: 2.74 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h 8m21s.101
+Time grass: [1.5  0.75 1.75 1.2  0.95 0.3 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.9721221635533084, -4.550368387624681, -3.233038633739703, -3.638516450911857, -5.022012084059471, -3.945203497172625]
+17000 episodes, total time: 16.41, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h 8m12s.332
+Time grass: [2.   1.45 1.5  1.45 1.3  1.9 ], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.4101994828280603, -1.0648724539469538, -0.946063692300968, -2.384621010910829, -2.2717930881422106, -1.5832896925213793]
+17100 episodes, total time: 16.17, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.04.
+Estimated finish time:  0h 7m48s.926
+Time grass: [1.7  0.8  2.6  1.95 0.55 1.3 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [1.3500986984982424, 0.46999583925956356, 3.7678099168792842, 2.38458370704404, -0.2601959907170278, 1.5210785398666518]
+17200 episodes, total time: 16.24, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.05.
+Estimated finish time:  0h 7m34s.653
+Time grass: [3.2  0.9  2.2  0.35 0.5  0.55], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-1.3233498707492457, -3.3914594522494594, -0.6477122645755802, -2.9989651657640843, -2.5108256507072215, -1.6884557839092598]
+17300 episodes, total time: 16.59, update time: 2.61 (sample time: 0.00, target action time: 0.00, pure update time: 2.61), save time: 0.04.
+Estimated finish time:  0h 7m27s.866
+Time grass: [1.65 0.5  1.85 0.9  0.35 1.55], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [1.814405238369074, 0.7389204043632175, 2.4005040961667192, -0.1259380823533922, 0.7736217350258446, 1.8512611332506714]
+17400 episodes, total time: 16.23, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h 7m 1s.958
+Time grass: [1.35 0.6  3.05 2.9  1.7  0.35], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.5472885499858635, -1.5998744928212685, 0.5404111618127898, 0.6670520140406331, -1.2458350242105074, -1.2149754951702398]
+17500 episodes, total time: 16.17, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h 6m44s.343
+Time grass: [0.3  1.2  1.8  1.7  1.   0.75], time live: [0.06666667 0.06666667 0.06666667 0.06666667 0.06666667 0.06666667]
+reward: [-2.4933428121300834, -3.439198476787219, -1.2975570758129313, -2.862340244600346, -2.8008652436656982, -1.7719602395839402]
+17600 episodes, total time: 15.95, update time: 2.80 (sample time: 0.00, target action time: 0.00, pure update time: 2.79), save time: 0.04.
+Estimated finish time:  0h 6m22s.704
+Time grass: [4.5  0.4  1.4  0.35 0.75 1.75], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [0.7485761253406242, -1.967485258731082, 0.03048965000573365, -1.2309989682275428, -1.3405019095416804, 0.8713620131223768]
+17700 episodes, total time: 16.44, update time: 2.67 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h 6m18s. 84
+Time grass: [3.1  0.45 2.7  1.05 1.35 1.35], time live: [0.16666667 0.16666667 0.16666667 0.16666667 0.16666667 0.16666667]
+reward: [0.25642171014877607, -1.0194500199916077, 0.9977188528720866, 0.892833390868276, 1.5278071781158864, 1.890721396168614]
+17800 episodes, total time: 16.59, update time: 2.78 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h 6m 4s.920
+Time grass: [1.45 2.4  0.9  1.35 0.8  1.35], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-1.492245245526633, -3.2358077416289697, -1.7353155522083186, -0.9893767667479633, -2.7769098734596085, -1.3402166398046473]
+17900 episodes, total time: 16.53, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.74), save time: 0.04.
+Estimated finish time:  0h 5m47s.181
+Time grass: [1.9  0.45 2.85 1.05 1.85 0.45], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-0.6586427203446342, -2.93988776110189, -1.7330040538910434, -2.3588699480972593, -2.7608030860747723, -2.0439456135607714]
+18000 episodes, total time: 16.53, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.73), save time: 0.04.
+Estimated finish time:  0h 5m30s.624
+Time grass: [1.6  1.65 1.7  1.2  1.7  1.55], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [0.4123872451300731, -0.322247336707127, 0.8588410932736854, -2.2300885034654083, -1.5579537961181722, -0.6587201537389559]
+18100 episodes, total time: 16.41, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.04.
+Estimated finish time:  0h 5m11s.845
+Time grass: [2.45 1.7  2.95 1.45 0.95 1.45], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [2.8508152040653307, 2.200725138717956, 3.304846201954342, 1.0386840307585394, 0.8938010585909769, -0.00801279510825328]
+18200 episodes, total time: 16.57, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.05.
+Estimated finish time:  0h 4m58s.269
+Time grass: [0.8  2.5  3.15 0.5  1.5  0.65], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-0.7198781211976015, -0.45370082677711, 1.8036222382788025, -3.7684730989473847, -1.6410577559650459, -1.26674974522553]
+18300 episodes, total time: 16.02, update time: 2.79 (sample time: 0.00, target action time: 0.00, pure update time: 2.78), save time: 0.04.
+Estimated finish time:  0h 4m32s.273
+Time grass: [2.65 1.75 1.75 0.8  0.7  0.55], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [-2.437022129593477, -1.9597494855374866, -0.2468121550550518, -2.0835940312243486, -3.3113842512774405, -3.861520425929445]
+18400 episodes, total time: 16.22, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h 4m19s.446
+Time grass: [1.8  0.55 1.4  1.75 1.   1.4 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-0.7893932967774798, -3.1439839239860468, -0.6319458308645736, -1.5886026824658435, -2.351110414735289, -1.206354490573376]
+18500 episodes, total time: 16.04, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h 4m 0s.643
+Time grass: [1.45 0.65 1.15 1.7  1.4  0.75], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-2.724618365433013, -3.6107081416508464, -0.814863476918622, -2.0152613027415494, -3.7668778516360915, -2.654813208070095]
+18600 episodes, total time: 16.40, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h 3m49s.607
+Time grass: [3.45 1.95 2.9  1.4  0.85 0.3 ], time live: [0.18333333 0.18333333 0.18333333 0.18333333 0.18333333 0.18333333]
+reward: [2.952732668554404, 1.5212267064436658, 2.7498104219244084, 1.0537018843528267, 0.5819793816649735, 1.556938844347521]
+18700 episodes, total time: 16.44, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.05.
+Estimated finish time:  0h 3m33s.679
+Time grass: [3.1  1.9  3.75 1.65 1.6  1.2 ], time live: [0.21666667 0.21666667 0.21666667 0.21666667 0.21666667 0.21666667]
+reward: [4.436039348180457, 2.3086291590359744, 5.393767791114097, 5.144093047278803, 5.303976258128137, 3.313629558782374]
+18800 episodes, total time: 16.50, update time: 2.72 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h 3m18s.  0
+Time grass: [1.25 1.65 2.   1.25 1.45 1.1 ], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-2.0813749385155362, -1.6521066101379898, -1.867574023355936, -2.236855772343236, -1.6532083624945748, -2.5212199288672985]
+18900 episodes, total time: 16.59, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.04.
+Estimated finish time:  0h 3m 2s.505
+Time grass: [0.25 0.85 2.3  2.55 1.05 0.4 ], time live: [0.1 0.1 0.1 0.1 0.1 0.1]
+reward: [-3.548060379733215, -2.2147843062842845, -1.010701925385947, -3.305193779657903, -3.432820899332138, -3.043995184844767]
+19000 episodes, total time: 16.31, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h 2m43s. 55
+Time grass: [1.4  0.9  2.25 0.6  0.25 0.85], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-3.7880247583208977, -3.571320018884092, -3.360839031077526, -5.055034001277175, -5.119901425583395, -4.9602656074196085]
+19100 episodes, total time: 16.38, update time: 2.73 (sample time: 0.00, target action time: 0.00, pure update time: 2.72), save time: 0.04.
+Estimated finish time:  0h 2m27s.398
+Time grass: [2.05 1.3  0.3  2.1  0.5  0.25], time live: [0.05 0.05 0.05 0.05 0.05 0.05]
+reward: [-2.8107351898376023, -4.4198766305116575, -2.348325265025032, -3.412957356909152, -3.93102747434335, -4.550294143083148]
+19200 episodes, total time: 16.09, update time: 2.75 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.05.
+Estimated finish time:  0h 2m 8s.755
+Time grass: [1.9  0.7  1.55 0.9  1.25 1.5 ], time live: [0.11666667 0.11666667 0.11666667 0.11666667 0.11666667 0.11666667]
+reward: [-2.3939553946845495, -4.314891510347204, -2.225752433013503, -3.5703826904544806, -2.011823707976599, -2.3306165370083205]
+19300 episodes, total time: 16.25, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h 1m53s.777
+Time grass: [1.7  0.75 0.8  0.5  0.8  1.85], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-3.2656129545698276, -4.849825800650204, -2.5534485375584897, -3.832387894222431, -4.486172669167885, -3.2572176482917925]
+19400 episodes, total time: 16.42, update time: 2.69 (sample time: 0.00, target action time: 0.00, pure update time: 2.69), save time: 0.04.
+Estimated finish time:  0h 1m38s.544
+Time grass: [3.3  0.65 0.95 1.6  0.65 0.8 ], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-0.9931002534710384, -2.438038515826905, -1.6141867645360974, -2.1283889942406367, -1.9475711948571575, -2.8102692164929666]
+19500 episodes, total time: 16.16, update time: 2.77 (sample time: 0.00, target action time: 0.00, pure update time: 2.77), save time: 0.04.
+Estimated finish time:  0h 1m20s.791
+Time grass: [1.6  0.5  2.05 0.65 0.6  1.45], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-3.4044555478497123, -3.773131197432805, -0.6070218337419283, -3.702246669661939, -3.5335653619020193, -3.389088072117918]
+19600 episodes, total time: 16.25, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.76), save time: 0.04.
+Estimated finish time:  0h 1m 5s.  4
+Time grass: [1.55 0.75 2.8  1.3  1.7  0.25], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-2.2222238376453887, -2.691399412734652, -0.2640055561569557, -2.747770389859986, -2.3432242777474324, -2.6654167966238558]
+19700 episodes, total time: 16.07, update time: 2.76 (sample time: 0.00, target action time: 0.00, pure update time: 2.75), save time: 0.05.
+Estimated finish time:  0h 0m48s.223
+Time grass: [1.25 1.75 2.   2.15 0.85 1.25], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-1.1539772914361435, -0.660864564663066, 0.06895326097813922, 0.35738561821324116, -0.8971259697387193, -0.18845910522988357]
+19800 episodes, total time: 16.40, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.05.
+Estimated finish time:  0h 0m32s.793
+Time grass: [0.4  2.65 1.45 0.9  1.05 1.  ], time live: [0.13333333 0.13333333 0.13333333 0.13333333 0.13333333 0.13333333]
+reward: [-1.9472845751634444, -0.7096470397589976, -0.9045584754806969, -1.6638519624408339, -1.3719198921842541, -2.994961826042908]
+19900 episodes, total time: 16.38, update time: 2.68 (sample time: 0.00, target action time: 0.00, pure update time: 2.68), save time: 0.04.
+Estimated finish time:  0h 0m16s.377
+Time grass: [2.65 0.65 1.85 1.7  2.   1.15], time live: [0.08333333 0.08333333 0.08333333 0.08333333 0.08333333 0.08333333]
+reward: [-0.24633895956107654, -1.8315536577769038, -0.08627121933455655, -0.21530522477215044, 1.1482216873064894, -0.30719165070041843]
+20000 episodes, total time: 16.68, update time: 2.66 (sample time: 0.00, target action time: 0.00, pure update time: 2.66), save time: 0.04.
+Estimated finish time:  0h 0m 0s.  0
+Time grass: [1.35 0.4  1.75 1.45 0.2  2.45], time live: [0.15 0.15 0.15 0.15 0.15 0.15]
+reward: [-0.9183863456542118, -1.976268782442331, 0.406424119199196, -2.4956273271100717, -1.470216094169882, -0.7858772875619471]
+Time grass: [1.68485 1.0698  1.41635 1.0965  1.12455 1.36015], time live: [0.12126667 0.12126667 0.12126667 0.12126667 0.12126667 0.12126667]
+Total training time:  0h54m 6s.819.

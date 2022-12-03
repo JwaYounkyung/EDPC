@@ -8,3 +8,4 @@ result/
 *.txt
 *.log
 **/R-MADDPG/multiagent/scenarios/
+result/
