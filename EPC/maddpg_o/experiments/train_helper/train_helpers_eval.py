@@ -193,19 +193,19 @@ def make_env(scenario_name, arglist, benchmark=False):
     scenario_class = importlib.import_module(module_name).Scenario
     # load scenario from script
     # print(Scenario.__module__.__file__)
-    ratio = 1.0 if FLAGS.map_size == "normal" else 2.0
+    ratio = 1.0 if arglist.map_size == "normal" else 2.0
     scenario = scenario_class(n_good=N_GOOD, n_adv=N_ADV, n_landmarks=N_LANDMARKS, n_food=N_FOOD, n_forests=N_FORESTS,
-                              no_wheel=FLAGS.no_wheel, sight=FLAGS.sight, alpha=FLAGS.alpha, ratio=ratio)
+                              no_wheel=arglist.no_wheel, sight=arglist.sight, alpha=arglist.alpha, ratio=ratio)
     # create world
     world = scenario.make_world()
     # create multiagent environment
     if benchmark:
         env = MultiAgentEnv(world, scenario.reset_world, scenario.reward,
-                            scenario.observation, scenario.benchmark_data, export_episode=FLAGS.save_gif_data)
+                            scenario.observation, scenario.benchmark_data, export_episode=arglist.save_gif_data)
     else:
         env = MultiAgentEnv(world, scenario.reset_world, scenario.reward,
                             scenario.observation, done_callback=scenario.done, info_callback=scenario.info,
-                            export_episode=FLAGS.save_gif_data)
+                            export_episode=arglist.save_gif_data)
     return env
 
 
@@ -358,14 +358,14 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--save-rate", type=int, default=1000,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--checkpoint-rate", type=int, default=0)
-    parser.add_argument("--load-dir", type=str, default="./result/simple_spread_epc",
+    parser.add_argument("--load-dir", type=str, default="./result/simple_spread_epc/stage-0/seed-0",
                         help="directory in which training state and model are loaded")
     # Evaluation
-    parser.add_argument("--restore", action="store_true", default=False)
+    parser.add_argument("--restore", action="store_true", default=True)
     parser.add_argument("--display", action="store_true", default=False)
     parser.add_argument("--save-gif-data", action="store_true", default=False)
     parser.add_argument("--render-gif", action="store_true", default=False)
-    parser.add_argument("--benchmark", action="store_true", default=False)
+    parser.add_argument("--benchmark", action="store_true", default=True)
     parser.add_argument("--benchmark-iters", type=int, default=10000,
                         help="number of iterations run for benchmarking")
 
