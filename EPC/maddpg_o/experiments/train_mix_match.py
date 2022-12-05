@@ -1,5 +1,5 @@
-from train_helper.train_helpers import parse_args
-from train_helper.proxy_train import proxy_train
+from .train_helper.train_helpers import parse_args
+from .train_helper.proxy_train import proxy_train
 import os
 import joblib
 

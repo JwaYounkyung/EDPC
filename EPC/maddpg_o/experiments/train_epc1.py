@@ -1,10 +1,10 @@
 import os,sys
 sys.path.insert(1, os.path.join(sys.path[0], '../..'))
 
-from train_helper.train_helpers import parse_args
-from train_helper.proxy_train import proxy_train
-from train_mix_match import mix_match
-from compete import compete
+from .train_helper.train_helpers import parse_args
+from .train_helper.proxy_train import proxy_train
+from .train_mix_match import mix_match
+from .compete import compete
 import os
 import joblib
 import numpy as np
@@ -18,7 +18,7 @@ def add_extra_flags(parser):
     parser.add_argument('--initial-population', type=int, default=6)#6
     parser.add_argument('--num-selection', type=int, default=3)#3
     parser.add_argument('--num-stages', type=int, default=3)
-    parser.add_argument('--stage-num-episodes', nargs="+", default=[50000, 20000, 20000])
+    parser.add_argument('--stage-num-episodes', type=int, nargs="+", default=[50000, 20000, 20000])
     parser.add_argument('--stage-n-envs', nargs="+", default=[25]) 
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
