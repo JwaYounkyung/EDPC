@@ -241,6 +241,10 @@ def get_trainer(side, i, scope, env, obs_shape_n):
     elif policy == "maddpg":
         model_p = mlp_model
         model_q = mlp_model
+    elif policy == "r-maddpg":
+        model_nature = mlp_model
+        model_p = mlp_model
+        model_q = mlp_model
     elif policy == "r-att-maddpg":
         model_nature = partial(mlp_model_adv_p if side == "adv" else mlp_model_agent_p, n_good=N_GOOD, n_adv=N_ADV,
                           n_land=N_LAND, index=i, share_weights=share_weights)
@@ -256,7 +260,7 @@ def get_trainer(side, i, scope, env, obs_shape_n):
         raise NotImplementedError
     # print(obs_shape_n)
     num_units = (FLAGS.adv_num_units if side == "adv" else FLAGS.good_num_units) or FLAGS.num_units
-    if policy == "r-att-maddpg":
+    if policy == "r-maddpg" or "r-att-maddpg":
         trainer = RMADDPGAgentMicroSharedTrainer
         return trainer(scope, model_nature, model_p, model_q, obs_shape_n, env.action_space, i, FLAGS, num_units, local_q_func=False)
     else:
