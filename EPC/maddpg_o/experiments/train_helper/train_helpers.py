@@ -260,7 +260,7 @@ def get_trainer(side, i, scope, env, obs_shape_n):
         raise NotImplementedError
     # print(obs_shape_n)
     num_units = (FLAGS.adv_num_units if side == "adv" else FLAGS.good_num_units) or FLAGS.num_units
-    if policy == "r-maddpg" or "r-att-maddpg":
+    if policy == "r-maddpg" or policy == "r-att-maddpg":
         trainer = RMADDPGAgentMicroSharedTrainer
         return trainer(scope, model_nature, model_p, model_q, obs_shape_n, env.action_space, i, FLAGS, num_units, local_q_func=False)
     else:
