@@ -231,12 +231,18 @@ def absolute_scope_name(relative_scope_name):
 # Saving variables
 # ================================================================
 
+# def load_state(fname, saver=None):
+#     """Load all the variables to the current session from the location <fname>"""
+#     if saver is None:
+#         saver = tf.train.Saver()
+#     saver.restore(get_session(), fname+"model.ckpt")
+#     return saver
 
 def load_state(fname, saver=None):
     """Load all the variables to the current session from the location <fname>"""
     if saver is None:
         saver = tf.train.Saver()
-    saver.restore(get_session(), fname+"model.ckpt")
+    saver.restore(get_session(), fname)
     return saver
 
 def load_params_from(fname, scope):
@@ -281,7 +287,10 @@ def load_variables(load_path, variables=None, sess=None):
             restores.append(v.assign(d))
     else:
         for v in variables:
-            restores.append(v.assign(loaded_params[v.name]))
+            try:
+                restores.append(v.assign(loaded_params[v.name]))
+            except:
+                print('variable %s not found in %s' % (v.name, load_path))
 
     sess.run(restores)
 
