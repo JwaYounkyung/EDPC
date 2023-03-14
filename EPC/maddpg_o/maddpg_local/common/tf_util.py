@@ -164,7 +164,7 @@ def make_session(num_cpu):
     """Returns a session that will use <num_cpu> CPU's only"""
     # print("num_cpu:", num_cpu)
     tf_config = tf.ConfigProto(
-        device_count={"CPU": 1},
+        #device_count={"CPU": 1},
         inter_op_parallelism_threads=num_cpu,
         intra_op_parallelism_threads=num_cpu)
     return tf.Session(config=tf_config)
@@ -179,6 +179,9 @@ def single_threaded_session():
     """Returns a session which will only use a single CPU"""
     return make_session(1)
 
+def multi_threaded_session(num_cpu):
+    """Returns a session which will only use a single CPU"""
+    return make_session(num_cpu)
 
 ALREADY_INITIALIZED = set()
 
@@ -290,7 +293,8 @@ def load_variables(load_path, variables=None, sess=None):
             try:
                 restores.append(v.assign(loaded_params[v.name]))
             except:
-                print('variable %s not found in %s' % (v.name, load_path))
+                pass
+                #print('variable %s not found in %s' % (v.name, load_path))
 
     sess.run(restores)
 

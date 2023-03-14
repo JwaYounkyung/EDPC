@@ -24,6 +24,9 @@ import random
 import gc
 
 import pickle
+
+import warnings
+warnings.filterwarnings("ignore")
 # logger = multiprocessing.log_to_stderr()
 # logger.setLevel(multiprocessing.SUBDEBUG)
 
@@ -179,7 +182,7 @@ def add_perturbation(weight):
     std = np.std(weight)
     return weight + np.random.normal(0., PERTURBATION * std, weight.shape)
 
-
+# benchmark evn generator
 def make_env(scenario_name, arglist, benchmark=False):
     import importlib
     from mpe_local.multiagent.environment import MultiAgentEnv
@@ -202,18 +205,6 @@ def make_env(scenario_name, arglist, benchmark=False):
                             scenario.observation, done_callback=scenario.done, info_callback=scenario.info,
                             export_episode=arglist.save_gif_data, noise_std=arglist.noise_std)
     return env
-
-
-def make_session(graph, num_cpu):
-    # print("num_cpu:", num_cpu)
-    tf_config = tf.ConfigProto(
-        # device_count={"CPU": num_cpu},
-        inter_op_parallelism_threads=num_cpu,
-        intra_op_parallelism_threads=num_cpu,
-        log_device_placement=False)
-    tf_config.gpu_options.allow_growth = True
-    return tf.Session(graph=graph, config=tf_config)
-    # return tf.Session(target=server.target, graph=graph, config=tf_config)
 
 
 def get_trainer(side, i, scope, env, obs_shape_n):
@@ -358,16 +349,13 @@ def parse_args(add_extra_flags=None):
                         help="number of units in the mlp")
     parser.add_argument("--good-num-units", type=int)
     parser.add_argument("--adv-num-units", type=int)
-    parser.add_argument("--n-cpu-per-agent", type=int, default=24)
+    parser.add_argument("--num-cpu", type=int, default=60)
     parser.add_argument("--good-share-weights", action="store_true", default=True)
     parser.add_argument("--adv-share-weights", action="store_true", default=True)
-    parser.add_argument("--use-gpu", action="store_true", default=True)
     parser.add_argument("--noise-std", type=float, default=0.0)
     # Checkpointing
     parser.add_argument("--save-dir", type=str, default="./result/simple_spread_epc",
                         help="directory in which training state and model should be saved")
-    parser.add_argument("--train-rate", type=int, default=100,
-                        help="save model once every time this many episodes are completed")
     parser.add_argument("--save-rate", type=int, default=100,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--checkpoint-rate", type=int, default=0)
@@ -426,11 +414,11 @@ def restore_weights(i, load_dir):
     return None
 
 def eval(arglist):
-    with U.single_threaded_session():
-        global FLAGS
-        FLAGS = arglist
+    global FLAGS
+    FLAGS = arglist
+    with U.multi_threaded_session(arglist.num_cpu):
         # save_gifs = 1
-
+        
         # Create environment
         curriculum = 0
 
@@ -489,7 +477,7 @@ def eval(arglist):
             else:
                 iitem = 0
                 for item in history_info:
-                    history_info[item] += info_n[item] # 바꿈
+                    history_info[item] += info_n[item] # change
                     iitem += 1
 
             if not train_step:
@@ -502,7 +490,7 @@ def eval(arglist):
 
             # terminal = (episode_step >= arglist.max_episode_len)
 
-            num = len(episode_rewards)//10000
+            num = len(episode_rewards)//arglist.benchmark_iters
             savedir = "./simple_sheep_wolf/5_3_2_4_50_curr"+str(num)+"/"
             max_len = 50+num*25
 
@@ -522,7 +510,6 @@ def eval(arglist):
                 agent_rewards[i][-1] += rew
 
             if done or terminal:
-                print('')
                 obs_n = env.reset()
                 episode_step = 0
                 episode_rewards.append(0)
@@ -534,8 +521,9 @@ def eval(arglist):
                     a.append(0)
                 agent_info.append([[]])
 
-                print("steps: {}, episodes: {}, mean episode reward: {}, time: {}".format(
-                      train_step, len(episode_rewards), episode_rewards[-2]/arglist.num_good, round(time.time()-t_start, 3)))
+                if len(episode_rewards) % 100 == 0:
+                    print("steps: {}, episodes: {}, mean episode reward: {}, total time: {}".format(
+                        train_step, len(episode_rewards), episode_rewards[-2]/arglist.num_good, round(time.time()-t_start, 3)))
 
             # increment global step counter
             train_step += 1
@@ -557,8 +545,8 @@ def eval(arglist):
                     episode_rewards = episode_rewards[:-1]
                     episode_rewards_mean =  [i/arglist.num_good for i in episode_rewards]
                     print(np.mean(episode_rewards_mean))
-                    with open(file_name, 'wb') as fp:
-                        pickle.dump(episode_rewards_mean, fp)
+                    # with open(file_name, 'wb') as fp:
+                    #     pickle.dump(episode_rewards_mean, fp)
                     break
                 continue
 
