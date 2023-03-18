@@ -342,7 +342,7 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--max-episode-len", type=int,
                         default=25, help="maximum episode length")
     parser.add_argument("--num-episodes", type=int,
-                        default=200000, help="number of episodes")
+                        default=10, help="number of episodes")
     parser.add_argument("--num-adversaries", type=int,
                         default=0, help="number of adversaries")
     parser.add_argument("--num-good", type=int,
@@ -350,7 +350,7 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--num-food", type=int,
                         default=3, help="number of food")
     parser.add_argument("--good-policy", type=str,
-                        default="att-maddpg", help="policy for good agents")
+                        default="r-att-maddpg", help="policy for good agents")
     parser.add_argument("--adv-policy", type=str,
                         default="att-maddpg", help="policy of adversaries")
     # Core training parameters
@@ -366,18 +366,18 @@ def parse_args(add_extra_flags=None):
                         help="number of units in the mlp")
     parser.add_argument("--good-num-units", type=int)
     parser.add_argument("--adv-num-units", type=int)
-    parser.add_argument("--n-cpu-per-agent", type=int, default=24)
+    parser.add_argument("--n-cpu-per-agent", type=int, default=60)
     parser.add_argument("--good-share-weights", action="store_true", default=True)
     parser.add_argument("--adv-share-weights", action="store_true", default=True)
     parser.add_argument("--use-gpu", action="store_true", default=True)
-    parser.add_argument("--noise-std", type=float, default=0.0)
+    parser.add_argument("--noise-std", type=float, default=3.0)
     
     # Checkpointing
-    parser.add_argument("--save-dir", type=str, default="./result/epc_food_collect",
+    parser.add_argument("--save-dir", type=str, default="./result/ramaddpg_mutate_noise3",
                         help="directory in which training state and model should be saved")
-    parser.add_argument("--train-rate", type=int, default=1000,
+    parser.add_argument("--train-rate", type=int, default=25,
                         help="save model once every time this many episodes are completed")
-    parser.add_argument("--save-rate", type=int, default=1000,
+    parser.add_argument("--save-rate", type=int, default=25,
                         help="save model once every time this many episodes are completed")
     parser.add_argument("--checkpoint-rate", type=int, default=0)
     parser.add_argument("--load-dir", type=str, default="./result/epc_food_collect",

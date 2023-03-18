@@ -10,18 +10,19 @@ import joblib
 import numpy as np
 
 import warnings
-warnings.filterwarnings("ignore")
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 def add_extra_flags(parser):
     parser.add_argument('--cooperative', action="store_true", default=True)
-    parser.add_argument('--initial-population', type=int, default=6)#6
-    parser.add_argument('--num-selection', type=int, default=3)#3
+    parser.add_argument('--initial-population', type=int, default=3)#6
+    parser.add_argument('--num-selection', type=int, default=2)#3
     parser.add_argument('--num-stages', type=int, default=3)
-    parser.add_argument('--stage-num-episodes', type=int, nargs="+", default=[50000, 20000, 20000])
+    parser.add_argument('--stage-num-episodes', type=int, nargs="+", default=[25, 25, 25])
     parser.add_argument('--stage-n-envs', nargs="+", default=[25]) 
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
+    parser.add_argument('--mutation-rate', type=float, default=0.2)
     return parser
 
 
@@ -99,8 +100,7 @@ def train_epc(arglist):
             print("Top sheep seeds:", sheep_indices)
         else:
             scores = np.average(report["baseline_sheep_scores"], axis=-1)
-            indices = scores.argsort()[-k:][::-1].tolist()
-
+            indices = scores.argsort()[-k:][::-1].tolist() # sorted list by fitness
         stage_dir = join_dir(save_dir, "stage-{}".format(s + 1))
         arglist.num_episodes = stage_num_episodes[s + 1]
         arglist.n_envs = stage_n_envs[s + 1]
@@ -109,6 +109,7 @@ def train_epc(arglist):
         n = 0
         print("Training stage-{} ...".format(s + 1))
 
+        # evolutionary learning
         if not cooperative:
             for i1 in range(k):
                 for j1 in range(i1, k):
@@ -131,6 +132,7 @@ def train_epc(arglist):
                     cur_dirs.append(arglist.save_dir)
                     arglist.wolf_init_load_dirs = [last_dirs[indices[i]], last_dirs[indices[j]]]
                     arglist.sheep_init_load_dirs = [last_dirs[indices[i]], last_dirs[indices[j]]]
+                    arglist.last_dirs = last_dirs
                     mix_match(copy.deepcopy(arglist))
                     n += 1
             assert (n == (k * (k + 1) // 2))

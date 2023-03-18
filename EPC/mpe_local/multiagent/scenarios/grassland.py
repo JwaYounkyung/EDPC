@@ -4,7 +4,7 @@ from mpe_local.multiagent.scenario import BaseScenario
 import os
 
 SIGHT = 0.5
-
+ALPHA = 0
 class Scenario(BaseScenario):
     def __init__(self, n_good, n_adv, n_landmarks, n_food, n_forests, alpha, sight, no_wheel, ratio, food_ratio=None):
         self.n_good = n_good
@@ -15,16 +15,18 @@ class Scenario(BaseScenario):
         self.alpha = alpha
         self.sight = sight
         self.no_wheel = no_wheel
-        print(sight,"sight____v2!!!!!!!")
-        print(alpha,"################alpha v2##############")
+        self.size_food = food_ratio or ratio
+        self.size = ratio
+        # print(sight,"sight___wolf_sheep_v2")
+        # print(alpha,"alpha######################")
 
     def make_world(self):
-
         world = World()
-        world.sight = self.sight
         # set any world properties first
         world.collaborative = True
         world.dim_c = 2
+        world.sight = self.sight
+        world.size = self.size
         num_good_agents = self.n_good
         num_adversaries = self.n_adv
         world.num_good_agents = num_good_agents
@@ -40,14 +42,14 @@ class Scenario(BaseScenario):
             agent.collide = True
             agent.silent = True
             agent.adversary = True if i < num_adversaries else False
-            agent.size = 0.08 if agent.adversary else 0.08
-            agent.accel = 4.0 if agent.adversary else 4.0
+            agent.size = (0.075 if agent.adversary else 0.05)
+            agent.accel = (2.0 if agent.adversary else 4.0)
             if agent.adversary:
                 agent.showmore = np.zeros(num_good_agents)
             else:
                 agent.showmore = np.zeros(num_food)
             #agent.accel = 20.0 if agent.adversary else 25.0
-            agent.max_speed = 3 if agent.adversary else 3
+            agent.max_speed = (2 if agent.adversary else 3)
             agent.live = 1
         # add landmarks
         '''
@@ -66,7 +68,6 @@ class Scenario(BaseScenario):
 
         world.landmarks = [Landmark() for i in range(num_landmarks)]
         for i, landmark in enumerate(world.landmarks):
-            landmark.sight = 1
             landmark.name = 'landmark %d' % i
             landmark.collide = False
             landmark.movable = False
@@ -75,7 +76,6 @@ class Scenario(BaseScenario):
         # make initial conditions
         world.food = [Landmark() for i in range(num_food)]
         for i, landmark in enumerate(world.food):
-            landmark.sight = 1
             landmark.name = 'food %d' % i
             landmark.collide = False
             landmark.movable = False
@@ -83,7 +83,6 @@ class Scenario(BaseScenario):
             landmark.boundary = False
         world.forests = [Landmark() for i in range(num_forests)]
         for i, landmark in enumerate(world.forests):
-            landmark.sight = 1
             landmark.name = 'forest %d' % i
             landmark.collide = False
             landmark.movable = False
@@ -120,18 +119,60 @@ class Scenario(BaseScenario):
             landmark.color = np.array([0.6, 0.9, 0.6])
         # set random initial states
         for agent in world.agents:
-            agent.state.p_pos = np.random.uniform(-1, +1, world.dim_p)
+            agent.state.p_pos = np.random.uniform(-1 * self.size, +1* self.size, world.dim_p)
             agent.state.p_vel = np.zeros(world.dim_p)
             agent.state.c = np.zeros(world.dim_c)
         for i, landmark in enumerate(world.landmarks):
-            landmark.state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
+            landmark.state.p_pos = np.random.uniform(-0.9* self.size, +0.9* self.size, world.dim_p)
             landmark.state.p_vel = np.zeros(world.dim_p)
         for i, landmark in enumerate(world.food):
-            landmark.state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
+            landmark.state.p_pos = np.random.uniform(-0.9* self.size_food, +0.9* self.size_food, world.dim_p)
             landmark.state.p_vel = np.zeros(world.dim_p)
         for i, landmark in enumerate(world.forests):
-            landmark.state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
+            landmark.state.p_pos = np.random.uniform(-0.9* self.size, +0.9* self.size, world.dim_p)
             landmark.state.p_vel = np.zeros(world.dim_p)
+        #########
+        '''
+        for i, agent in enumerate(world.agents):
+            agent.color = np.array([0.35, 0.85, 0.35]) if not agent.adversary else np.array([0.85, 0.35, 0.35])
+            # random properties for landmarks
+        index = np.random.randint(2)
+        '''
+        '''
+        for i, landmark in enumerate(world.landmarks):
+            if not landmark.boundary:
+                landmark.state.p_pos = np.random.uniform(-0.8, +0.8, world.dim_p)
+                landmark.state.p_vel = np.zeros(world.dim_p)
+                if (i==index):
+                    p_pos_rem = landmark.state.p_pos
+        '''
+        '''
+        for i, landmark in enumerate(world.landmarks):
+            landmark.color = np.array([0.25, 0.25, 0.25])
+            # if (i==index)
+
+        # set random initial states
+        for agent in world.agents:
+        '''
+        '''
+            key_sheep = np.random.randint(2)
+            if not (agent.adversary or key_sheep):
+                # index = np.random.randint(self.num_landmarks)
+                agent.state.p_pos = p_pos_rem+np.random.uniform(-0.1, +0.1, world.dim_p)
+            else:
+                agent.state.p_pos = np.random.uniform(-0.8, +0.8, world.dim_p)
+        '''
+        '''
+            agent.state.p_pos = np.random.uniform(-0.8, +0.8, world.dim_p)
+            agent.state.p_vel = np.zeros(world.dim_p)
+            agent.state.c = np.zeros(world.dim_c)
+
+        for i, landmark in enumerate(world.landmarks):
+            if not landmark.boundary:
+                landmark.state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
+                landmark.state.p_vel = np.zeros(world.dim_p)
+        '''
+
 
     def benchmark_data(self, agent, world):
         # returns data for benchmarking purposes
@@ -159,8 +200,30 @@ class Scenario(BaseScenario):
     def adversaries(self, world):
         return [agent for agent in world.agents if agent.adversary]
 
+    '''
+    def done(self, agent, world):
+
+        if agent.collide:
+            if agent in self.adversaries(world):
+                for ag in self.good_agents(world):
+                    if self.is_collision(ag, agent):
+                        return 1
+            else:
+                for a in self.adversaries(world):
+                    if self.is_collision(a, agent):
+                        return 1
+        return 0
+    '''
 
     def done(self, agent, world):
+        if agent in self.adversaries(world):
+            for ag in self.good_agents(world):
+                if ag.live:
+                    return 0
+            return 1
+        else:
+            if not agent.live:
+                return 1
         return 0
 
     def info(self, agent, world):
@@ -183,29 +246,29 @@ class Scenario(BaseScenario):
 
         return np.concatenate([np.array(time_grass)]+[np.array(time_live)])
 
-
-
     def reward(self, agent, world):
         # Agents are rewarded based on minimum agent distance to each landmark
         # main_reward = self.adversary_reward(agent, world) if agent.adversary else self.agent_reward(agent, world)
         main_reward = self.reward_all_in_once(agent, world)
         return main_reward
 
-
     def reward_all_in_once(self, agent, world):
         num_agents = len(world.agents)
         reward_n = [0]* num_agents
+        # print(reward_n)
+        
         alpha_sharing = self.alpha
+
         agents_live_adv = []
         agents_live_good = []
         agents_live_id = []
+
         #reward_live_adv = []
         #reward_live_good = []
         for i, agent_new in enumerate(world.agents):
             if agent_new.live:
                 agents_live_id.append(i)
                 if agent_new.adversary:
-
                     agents_live_adv.append(agent_new)
                     #reward_live_adv.append(0)
                 else:
@@ -215,85 +278,53 @@ class Scenario(BaseScenario):
                 agent_new.color = np.array([0.0, 0.0, 0.0])
         reward_live_adv = np.zeros(len(agents_live_adv))
         reward_live_good = np.zeros(len(agents_live_good))
-        shape = True
+
+        shape_sheep = False
+        shape_wolf = True
 
         good_collide_id = []
         adv_collide_id = []
         food_id = []
 
         for i, agent_new in enumerate(agents_live_adv):
-            # shape of food:
-            distance_min = min([np.sqrt(np.sum(np.square(food.state.p_pos - agent_new.state.p_pos))) for food in world.food])
-            if distance_min<self.sight and not self.no_wheel:
-                reward_live_adv[i] -= 0.1 *  distance_min
+
             # collision reward:
             good_collide_id = []
             num_collide = 0
             if agent_new.collide:
                 for j, good in enumerate(agents_live_good):
                     if self.is_collision(good, agent_new):
-                        num_collide += 1
-                        good_collide_id.append(j)
-            if num_collide>=2:
-                reward_live_adv[i] -= 6*(1-alpha_sharing)
-                adv_share_reward = -6*np.ones(len(agents_live_adv))*(alpha_sharing)
-                reward_live_adv = reward_live_adv+adv_share_reward
-                for id in good_collide_id:
-                    reward_live_good[id] += 6/num_collide*(1-alpha_sharing)
-                    good_share_reward = 6/num_collide*np.ones(len(agents_live_good))*(alpha_sharing)
-                    reward_live_good = reward_live_good+good_share_reward
-                agent_new.live = 0
-
+                        reward_live_adv[i] += 5*(1-alpha_sharing)
+                        reward_live_good[j] -= 5*(1-alpha_sharing)
+                        good.live = 0
+                        adv_share_reward = np.ones(len(agents_live_adv))*5*alpha_sharing
+                        good_share_reward = -np.ones(len(agents_live_good))*5*alpha_sharing
+                        reward_live_adv = reward_live_adv+adv_share_reward
+                        reward_live_good = reward_live_good+good_share_reward
             # shape to encourage collision:
-            if shape:
-                if len(agents_live_good)>0:
+            if len(agents_live_good)>0:
+                if shape_wolf:
                     distance_min = min(np.sqrt(np.sum(np.square(agent_new.state.p_pos - good.state.p_pos)))for good in agents_live_good)
                     if distance_min<self.sight and not self.no_wheel:
-                        reward_live_adv[i] -= 0.04*distance_min
-            # eat food reward
-            for i_food, food in enumerate(world.food):
-                if self.is_collision(agent_new, food):
-                    reward_live_adv[i] += 1*(1-alpha_sharing)
-                    adv_share_reward = np.ones(len(agents_live_adv))*alpha_sharing
-                    reward_live_adv = reward_live_adv+adv_share_reward
-                    food_id.append(i_food)
+                        reward_live_adv[i] -= 0.1* distance_min
 
         for i, agent_new in enumerate(agents_live_good):
             # shape of food:
             distance_min = min([np.sqrt(np.sum(np.square(food.state.p_pos - agent_new.state.p_pos))) for food in world.food])
             if distance_min<self.sight and not self.no_wheel:
                 reward_live_good[i] -= 0.1 * distance_min
-            # collision reward:
-            adv_collide_id = []
-            num_collide = 0
-            if agent_new.collide:
-                for j, adv in enumerate(agents_live_adv):
-                    if self.is_collision(adv, agent_new):
-                        num_collide += 1
-                        adv_collide_id.append(j)
-            if num_collide>=2:
-                reward_live_good[i] -= 6*(1-alpha_sharing)
-                good_share_reward = -6*np.ones(len(agents_live_good))*(alpha_sharing)
-                reward_live_good = reward_live_good+good_share_reward
-                for id in adv_collide_id:
-                    reward_live_adv[id] += 6/num_collide*(1-alpha_sharing)
-                    adv_share_reward = 6/num_collide*np.ones(len(agents_live_adv))*(alpha_sharing)
-                    reward_live_adv = reward_live_adv+adv_share_reward
-                agent_new.live = 0
 
-            # shape to encourage collision:
-            if shape:
-                # for adv in agents_live_adv:
-                if len(agents_live_adv)>0:
-                    distance_min = min(np.sqrt(np.sum(np.square(agent_new.state.p_pos - adv.state.p_pos))) for adv in agents_live_adv)
-                    if distance_min<self.sight and not self.no_wheel:
-                        reward_live_good[i] -= 0.04 * distance_min
+            # shape to not encourage collision:
+            if shape_sheep:
+                distance_min = min(np.sqrt(np.sum(np.square(agent_new.state.p_pos - adv.state.p_pos))) for adv in agents_live_adv)
+                if distance_min<self.sight and not self.no_wheel:
+                    reward_live_good[i] += 0.05*distance_min
 
             # eat food reward
             for i_food, food in enumerate(world.food):
                 if self.is_collision(agent_new, food):
-                    reward_live_good[i] += 1*(1-alpha_sharing)
-                    good_share_reward = np.ones(len(agents_live_good))*alpha_sharing
+                    reward_live_good[i] += 2*(1-alpha_sharing)
+                    good_share_reward = 2*np.ones(len(agents_live_good))*alpha_sharing
                     reward_live_good = reward_live_good+good_share_reward
                     food_id.append(i_food)
 
@@ -303,7 +334,7 @@ class Scenario(BaseScenario):
             reward_n[id] = reward_all_live[j]
             j = j+1
         for i_food in food_id:
-            world.food[i_food].state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
+            world.food[i_food].state.p_pos = np.random.uniform(-0.9 * self.size_food, +0.9 * self.size_food, world.dim_p)
         return reward_n
 
 
@@ -311,46 +342,40 @@ class Scenario(BaseScenario):
         # Agents are negatively rewarded if caught by adversaries
         rew = 0
         agent.showmore = np.zeros(world.num_adversaries)
-        shape = True    #??????????????????
+        shape = False
         if not agent.live:
             return 0
         adversaries = self.adversaries(world)
-        agents = self.good_agents(world)
-        adv_distance = []
-        food_distance = []
-        # encourage agents to collide
-
         if shape:
             for adv in adversaries:
-                rew -= 0.03*(np.sqrt(np.sum(np.square(agent.state.p_pos - adv.state.p_pos))))
-            # rew -= SMALLESTof(adv_distance)
+                rew += 0.05 * np.sqrt(np.sum(np.square(agent.state.p_pos - adv.state.p_pos)))
         i_showmore = 0
-        num_adv_touch = 0
-        num_agent_touch = 0
-
-        # punish for eaton by others, rewards for eating others
         if agent.collide:
             for a in adversaries:
                 if self.is_collision(a, agent):
-                    num_adv_touch += 1
+                    rew -= 5
                     agent.showmore[i_showmore] += 1
+
+                    agent.live = 0      #gaidong
                 i_showmore += 1
-
-        if num_adv_touch>=2:
-            agent.live = 0      #gaidong
-
         def bound(x):
             if x < 0.9:
                 return 0
             if x < 1.0:
                 return (x - 0.9) * 10
             return 2.5
-
+            # return min(np.exp(2 * x - 2), 10)  # 1 + (x - 1) * (x - 1)
+        '''
+        for p in range(world.dim_p):
+            x = abs(agent.state.p_pos[p])
+            if x >= 1:
+                agent.live = 0
+            rew -= 2 * bound(x)
+        '''
         for food in world.food:
             if self.is_collision(agent, food):
                 rew += 2
-                food.state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
-    
+                food.state.p_pos = np.random.uniform(-0.9 * self.size, +0.9 * self.size, world.dim_p)
         rew -= 0.1 * min([np.sqrt(np.sum(np.square(food.state.p_pos - agent.state.p_pos))) for food in world.food])
 
         return rew
@@ -383,7 +408,7 @@ class Scenario(BaseScenario):
     def observation(self, agent, world):
         # get positions of all entities in this agent's reference frame
         entity_pos = []
-
+        
         for entity in world.landmarks:
             distance = np.sqrt(np.sum(np.square(entity.state.p_pos - agent.state.p_pos)))
             if distance > self.sight:

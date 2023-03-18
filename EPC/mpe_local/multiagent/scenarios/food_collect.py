@@ -23,8 +23,8 @@ class Scenario(BaseScenario):
         self.alpha = alpha
         self.sight = sight
         self.no_wheel = no_wheel
-        print(sight,"sight___simple_spread_v25")
-        print(alpha,"alpha######################")
+        # print(sight,"sight___simple_spread_v25")
+        # print(alpha,"alpha######################")
 
     def make_world(self):
         world = World()
