@@ -35,11 +35,11 @@ def renumber(read_path, write_path, r, delta, mutation_rate, last_dirs, n):
         # mutation
         if random.uniform(0, 1) <= mutation_rate:
             while True:
-                seed = random.choice(last_dirs)
+                # seed = random.choice(last_dirs)
                 agent = random.randrange(n)
-                if seed != read_path or agent != i:
+                if agent != i:
                     break
-            weights = read_and_renumber(os.path.join(seed, "agent{}.trainable-weights".format(agent)), agent, i + delta)
+            weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(agent)), agent, i + delta)
         else:
             weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(i)), i, i + delta)
         

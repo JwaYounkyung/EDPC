@@ -1,6 +1,6 @@
 #!/bin/sh
-exp_name="ramaddpg_noise0"
-noise=0
+exp_name="ramaddpg_mutation_noise3"
+noise=3
 
 python maddpg_o/experiments/train_helper/train_helpers_eval.py \
     --num-good=6 \
