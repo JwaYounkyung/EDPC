@@ -3,6 +3,7 @@ from .train_helper.proxy_train import proxy_train
 import os
 import joblib
 import random
+import numpy
 
 
 def add_extra_flags(parser):
@@ -29,16 +30,29 @@ def read_and_renumber(path, i, j):
         new_weights['/'.join(dname)] = v
     return new_weights
 
+def renumber(read_path, write_path, r, delta):
+    for i in r:
+        weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(i)), i, i + delta)
+        joblib.dump(weights, os.path.join(write_path, "agent{}.trainable-weights".format(i + delta)))
 
-def renumber(read_path, write_path, r, delta, mutation_rate, last_dirs, n):
+def renumber_mutation(read_path, write_path, r, delta, mutation_rate, n, agent_scores):
+    # reward sorted index
+    sorted_index = numpy.argsort(agent_scores).tolist()
     for i in r:
         # mutation
         if random.uniform(0, 1) <= mutation_rate:
             while True:
-                # seed = random.choice(last_dirs)
-                agent = random.randrange(n)
-                if agent != i:
+                # agent score is max, do not mutate
+                if i == sorted_index[0]:
+                    agent = i
                     break
+                # change agent to higher score agent 
+                else:
+                    # cut sorted list until i
+                    upper_list = sorted_index[:sorted_index.index(i)]
+                    agent = random.choice(upper_list)
+                    if agent_scores[agent] > agent_scores[i]:
+                        break
             weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(agent)), agent, i + delta)
         else:
             weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(i)), i, i + delta)
@@ -55,12 +69,12 @@ def mix_match(FLAGS):
     n_wolves = FLAGS.num_adversaries
 
     m_rate = FLAGS.mutation_rate
-    last_dirs = FLAGS.last_dirs
+    agent_scores = FLAGS.agent_scores
 
-    renumber(FLAGS.wolf_init_load_dirs[0], initial_dir, range(n_wolves), 0, m_rate, last_dirs, n_wolves)
-    renumber(FLAGS.wolf_init_load_dirs[1], initial_dir, range(n_wolves), n_wolves, m_rate, last_dirs, n_wolves)
-    renumber(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves, m_rate, last_dirs, n_sheep)
-    renumber(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep, m_rate, last_dirs, n_sheep)
+    renumber(FLAGS.wolf_init_load_dirs[0], initial_dir, range(n_wolves), 0)
+    renumber(FLAGS.wolf_init_load_dirs[1], initial_dir, range(n_wolves), n_wolves)
+    renumber_mutation(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves, m_rate, n_sheep, agent_scores[0])
+    renumber_mutation(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep, m_rate, n_sheep, agent_scores[1])
 
     init_weight_config = {
         "old_n_good": n_sheep * 2,
