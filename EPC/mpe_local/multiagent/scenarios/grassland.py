@@ -150,6 +150,7 @@ class Scenario(BaseScenario):
         for i, landmark in enumerate(world.landmarks):
             landmark.color = np.array([0.25, 0.25, 0.25])
             # if (i==index)
+
         # set random initial states
         for agent in world.agents:
         '''
@@ -165,6 +166,7 @@ class Scenario(BaseScenario):
             agent.state.p_pos = np.random.uniform(-0.8, +0.8, world.dim_p)
             agent.state.p_vel = np.zeros(world.dim_p)
             agent.state.c = np.zeros(world.dim_c)
+
         for i, landmark in enumerate(world.landmarks):
             if not landmark.boundary:
                 landmark.state.p_pos = np.random.uniform(-0.9, +0.9, world.dim_p)
@@ -200,6 +202,7 @@ class Scenario(BaseScenario):
 
     '''
     def done(self, agent, world):
+
         if agent.collide:
             if agent in self.adversaries(world):
                 for ag in self.good_agents(world):
