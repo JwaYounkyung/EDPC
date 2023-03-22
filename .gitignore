@@ -3,6 +3,7 @@
 **/R-MADDPG/results/
 **/R-MADDPG/tensorboard-logs/
 EPC/result/
+EPC/result_new/
 **/.vscode/
 result/
 *.txt
@@ -10,3 +11,4 @@ result/
 **/R-MADDPG/multiagent/scenarios/
 result/
 *.DS_Store
+*.png
