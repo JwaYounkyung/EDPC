@@ -1,7 +1,8 @@
 #!/bin/sh
-exp_name="ramaddpg_mutation2_noise3"
+exp_name="ramaddpg_mix_noise3"
 noise=3
 mutation_rate=0.2
+mode="proportional"
 
 CUDA_VISIBLE_DEVICES="" python -m maddpg_o.experiments.train_epc1 \
     --initial-population=3 \
@@ -17,4 +18,5 @@ CUDA_VISIBLE_DEVICES="" python -m maddpg_o.experiments.train_epc1 \
     --train-rate=1000 \
     --n-cpu-per-agent=60 \
     --noise-std=$noise \
+    --roulette-mode=$mode \
     2>&1 | tee ${exp_name}.log

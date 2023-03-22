@@ -8,6 +8,7 @@ from .compete import compete
 import os
 import joblib
 import numpy as np
+import random
 
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -23,6 +24,7 @@ def add_extra_flags(parser):
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
     parser.add_argument('--mutation-rate', type=float, default=0.2)
+    parser.add_argument('--roulette-mode', type=str, default='proportional')
     return parser
 
 
@@ -56,6 +58,8 @@ def train_epc(arglist):
     arglist.n_envs = stage_n_envs[0]
 
     n = original_arglist.initial_population
+    roulette_mode = original_arglist.roulette_mode
+
     last_dirs = []
     print("Training stage-0 ...")
     for i in range(n):
@@ -85,6 +89,38 @@ def train_epc(arglist):
         compete_arglist.baseline_checkpoint_rates = None
         compete_arglist.save_dir = join_dir(stage_dir, "compete_result")
         return compete(compete_arglist)
+
+    def seed_roulette(scores, mode='proportional'):
+        '''
+        mode = 'proportional' or 'ranking'
+        'proportional'
+            proportional wheel after normalize
+            zero probability for lowest
+        'ranking'
+            fitness is reciprocal of rank
+        '''
+        if mode == 'proportional':
+            min_fitness = min([s for s in scores])
+            fitness = [s+np.abs(min_fitness) for s in scores]
+            total_fitness = sum(fitness)
+        elif mode == 'ranking':
+            s = sorted(scores, reverse=True)
+            rank = [s.index(x)+1 for x in scores]
+            fitness = [1/r for r in rank]
+            total_fitness = sum(fitness)
+
+        par = []  
+        for i in range(2):
+            random_rate = random.uniform(0, 1)  # roulette 
+            k = 0
+            sum_fitness = 0
+            while k < len(fitness):
+                sum_fitness += fitness[k]
+                if random_rate <= sum_fitness/total_fitness:
+                    break
+                k += 1
+            par.append(k)
+        return par
 
     for s in range(num_stages - 1):
         print("Competing stage-{} ...".format(s))
@@ -126,16 +162,21 @@ def train_epc(arglist):
         else:
             agent_scores = [report['detailed_reports'][i]['sheep']['ind_score'] for i in range(num_stages)]
             arglist.num_food *= 2
-            for i in range(k):
-                for j in range(i, k):
-                    print("Training seed-{} (from seed {} x {}) ...".format(n, indices[i], indices[j]))
-                    arglist.save_dir = join_dir(stage_dir, "seed-{}".format(n))
-                    cur_dirs.append(arglist.save_dir)
-                    arglist.wolf_init_load_dirs = [last_dirs[indices[i]], last_dirs[indices[j]]]
-                    arglist.sheep_init_load_dirs = [last_dirs[indices[i]], last_dirs[indices[j]]]
-                    arglist.agent_scores = [agent_scores[indices[i]], agent_scores[indices[j]]]
-                    mix_match(copy.deepcopy(arglist))
-                    n += 1
+            ## roulette
+            parents_set = []
+            while n < (k * (k + 1) // 2):
+                par1, par2 = seed_roulette(scores, mode=roulette_mode)
+                parents_set.append(tuple([par1, par2]))
+                # if tuple([par1, par2]) in parents_set:
+                #     continue
+                print("Training seed-{} (from seed {} x {}) ...".format(n, par1, par2))
+                arglist.save_dir = join_dir(stage_dir, "seed-{}".format(n))
+                cur_dirs.append(arglist.save_dir)
+                arglist.wolf_init_load_dirs = [last_dirs[par1], last_dirs[par2]]
+                arglist.sheep_init_load_dirs = [last_dirs[par1], last_dirs[par2]]
+                arglist.agent_scores = [agent_scores[par1], agent_scores[par2]]
+                mix_match(copy.deepcopy(arglist))
+                n += 1
             assert (n == (k * (k + 1) // 2))
         
         last_dirs = cur_dirs
