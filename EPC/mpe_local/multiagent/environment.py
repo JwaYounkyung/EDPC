@@ -40,7 +40,8 @@ class MultiAgentEnv(gym.Env):
         # if true, every agent has the same reward
         self.shared_reward = world.collaborative if hasattr(world, 'collaborative') else False
         if hasattr(world, 'collaborative'):
-            print("collaborate!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            # print("collaborate!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            pass
         else:
             print("not collaborate!!!!!!!!!!!!!!!!!!!!!!!!")
         self.time = 0
