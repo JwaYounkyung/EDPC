@@ -124,7 +124,7 @@ def train_epc(arglist):
                             n += 1
             assert (n == (k * (k + 1) // 2) ** 2)
         else:
-            agent_scores = [report['detailed_reports'][i]['sheep']['ind_score'] for i in range(arglist.num_good)]
+            agent_scores = [report['detailed_reports'][i]['sheep']['ind_score'] for i in range(num_stages)]
             arglist.num_food *= 2
             for i in range(k):
                 for j in range(i, k):

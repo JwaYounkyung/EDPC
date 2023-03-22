@@ -373,7 +373,7 @@ def parse_args(add_extra_flags=None):
     parser.add_argument("--noise-std", type=float, default=3.0)
     
     # Checkpointing
-    parser.add_argument("--save-dir", type=str, default="./result/ramaddpg_mutate_noise3",
+    parser.add_argument("--save-dir", type=str, default="./result/ramaddpg_test",
                         help="directory in which training state and model should be saved")
     parser.add_argument("--train-rate", type=int, default=25,
                         help="save model once every time this many episodes are completed")

@@ -37,10 +37,10 @@ def renumber(read_path, write_path, r, delta):
 
 def renumber_mutation(read_path, write_path, r, delta, mutation_rate, n, agent_scores):
     # reward sorted index
-    sorted_index = numpy.argsort(agent_scores).tolist()
+    sorted_index = numpy.argsort(agent_scores)[::-1].tolist()
     for i in r:
         # mutation
-        if random.uniform(0, 1) <= mutation_rate:
+        if (random.uniform(0, 1) <= mutation_rate) and (len(sorted_index)!=0):
             while True:
                 # agent score is max, do not mutate
                 if i == sorted_index[0]:
@@ -50,9 +50,11 @@ def renumber_mutation(read_path, write_path, r, delta, mutation_rate, n, agent_s
                 else:
                     # cut sorted list until i
                     upper_list = sorted_index[:sorted_index.index(i)]
+                    if len(upper_list)==0: # infact no need to check, since already did it at upper if
+                        agent = i
+                        break 
                     agent = random.choice(upper_list)
-                    if agent_scores[agent] > agent_scores[i]:
-                        break
+                    break
             weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(agent)), agent, i + delta)
         else:
             weights = read_and_renumber(os.path.join(read_path, "agent{}.trainable-weights".format(i)), i, i + delta)
@@ -68,13 +70,10 @@ def mix_match(FLAGS):
     n_sheep = FLAGS.num_good
     n_wolves = FLAGS.num_adversaries
 
-    m_rate = FLAGS.mutation_rate
-    agent_scores = FLAGS.agent_scores
-
     renumber(FLAGS.wolf_init_load_dirs[0], initial_dir, range(n_wolves), 0)
     renumber(FLAGS.wolf_init_load_dirs[1], initial_dir, range(n_wolves), n_wolves)
-    renumber_mutation(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves, m_rate, n_sheep, agent_scores[0])
-    renumber_mutation(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep, m_rate, n_sheep, agent_scores[1])
+    renumber_mutation(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves, FLAGS.mutation_rate, n_sheep, FLAGS.agent_scores[0])
+    renumber_mutation(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep, FLAGS.mutation_rate, n_sheep, FLAGS.agent_scores[1])
 
     init_weight_config = {
         "old_n_good": n_sheep * 2,
