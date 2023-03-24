@@ -1,7 +1,7 @@
 #!/bin/sh
 exp_name="ramaddpg_mutation2_noise3"
 noise=3
-mutation_rate=0.2
+mutation_rate=0.25
 
 CUDA_VISIBLE_DEVICES="" python -m maddpg_o.experiments.train_epc1 \
     --initial-population=3 \
