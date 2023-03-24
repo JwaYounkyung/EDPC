@@ -41,6 +41,18 @@ def join_dir(dirname1, dirname2):
 def expand(arr, n):
     return arr + [arr[-1]] * (n - len(arr))
 
+def exponential_mapping(fitness_values, alpha=2):
+    """
+    Normalizes fitness values using exponential mapping.
+    Args:
+        fitness_values: A numpy array of fitness values.
+        alpha: A parameter that controls the steepness of the exponential mapping function.
+    Returns:
+        A numpy array of normalized fitness values.
+    """
+    max_abs_fitness = np.max(np.abs(fitness_values))
+    exp_fitness = np.exp(alpha * fitness_values / max_abs_fitness)
+    return exp_fitness/np.sum(exp_fitness)
 
 def train_epc(arglist):
     import copy
@@ -100,14 +112,16 @@ def train_epc(arglist):
             fitness is reciprocal of rank
         '''
         if mode == 'proportional':
-            min_fitness = min([s for s in scores])
-            fitness = [s+np.abs(min_fitness) for s in scores]
-            total_fitness = sum(fitness)
+            # min_fitness = min(scores)
+            # fitness = [s+np.abs(min_fitness) for s in scores]
+            # total_fitness = sum(fitness)
+            fitness = exponential_mapping(scores)
         elif mode == 'ranking':
             s = sorted(scores, reverse=True)
             rank = [s.index(x)+1 for x in scores]
             fitness = [1/r for r in rank]
             total_fitness = sum(fitness)
+            fitness = fitness/total_fitness
 
         par = []  
         for i in range(2):
@@ -116,7 +130,7 @@ def train_epc(arglist):
             sum_fitness = 0
             while k < len(fitness):
                 sum_fitness += fitness[k]
-                if random_rate <= sum_fitness/total_fitness:
+                if random_rate <= sum_fitness:
                     break
                 k += 1
             par.append(k)
@@ -178,6 +192,7 @@ def train_epc(arglist):
                 mix_match(copy.deepcopy(arglist))
                 n += 1
             assert (n == (k * (k + 1) // 2))
+            print("Parents set stage-{}:".format(s+1), parents_set)
         
         last_dirs = cur_dirs
 

@@ -1,7 +1,7 @@
 #!/bin/sh
-exp_name="ramaddpg_mix_noise3"
+exp_name="ramaddpg_mixexp0.25_noise3"
 noise=3
-mutation_rate=0.2
+mutation_rate=0.25
 mode="proportional"
 
 CUDA_VISIBLE_DEVICES="" python -m maddpg_o.experiments.train_epc1 \
