@@ -229,7 +229,7 @@ def get_trainer(side, i, scope, env, obs_shape_n):
         model_p = mlp_model
         model_q = mlp_model
     elif policy == "r-att-maddpg":
-        model_nature = partial(mlp_model_adv_p if side == "adv" else mlp_model_agent_p, n_good=N_GOOD, n_adv=N_ADV,
+        model_nature = partial(mlp_model_adv_q if side == "adv" else mlp_model_agent_q, n_good=N_GOOD, n_adv=N_ADV,
                           n_land=N_LAND, index=i, share_weights=share_weights)
         model_p = partial(mlp_model_adv_p if side == "adv" else mlp_model_agent_p, n_good=N_GOOD, n_adv=N_ADV,
                           n_land=N_LAND, index=i, share_weights=share_weights)

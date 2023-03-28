@@ -41,7 +41,7 @@ def join_dir(dirname1, dirname2):
 def expand(arr, n):
     return arr + [arr[-1]] * (n - len(arr))
 
-def exponential_mapping(fitness_values, alpha=2):
+def exponential_mapping(fitness_values, alpha=3):
     """
     Normalizes fitness values using exponential mapping.
     Args:
