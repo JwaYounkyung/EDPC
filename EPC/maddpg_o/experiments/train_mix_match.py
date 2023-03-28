@@ -70,10 +70,16 @@ def mix_match(FLAGS):
     n_sheep = FLAGS.num_good
     n_wolves = FLAGS.num_adversaries
 
-    renumber(FLAGS.wolf_init_load_dirs[0], initial_dir, range(n_wolves), 0)
-    renumber(FLAGS.wolf_init_load_dirs[1], initial_dir, range(n_wolves), n_wolves)
-    renumber_mutation(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves, FLAGS.mutation_rate, n_sheep, FLAGS.agent_scores[0])
-    renumber_mutation(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep, FLAGS.mutation_rate, n_sheep, FLAGS.agent_scores[1])
+    if FLAGS.mutation:
+        renumber(FLAGS.wolf_init_load_dirs[0], initial_dir, range(n_wolves), 0)
+        renumber(FLAGS.wolf_init_load_dirs[1], initial_dir, range(n_wolves), n_wolves)
+        renumber_mutation(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves, FLAGS.mutation_rate, n_sheep, FLAGS.agent_scores[0])
+        renumber_mutation(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep, FLAGS.mutation_rate, n_sheep, FLAGS.agent_scores[1])
+    else:
+        renumber(FLAGS.wolf_init_load_dirs[0], initial_dir, range(n_wolves), 0)
+        renumber(FLAGS.wolf_init_load_dirs[1], initial_dir, range(n_wolves), n_wolves)
+        renumber(FLAGS.sheep_init_load_dirs[0], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves)
+        renumber(FLAGS.sheep_init_load_dirs[1], initial_dir, range(n_wolves, n_wolves + n_sheep), n_wolves + n_sheep) 
 
     init_weight_config = {
         "old_n_good": n_sheep * 2,

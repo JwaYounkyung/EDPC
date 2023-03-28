@@ -10,7 +10,7 @@ python maddpg_o/experiments/train_helper/train_helpers_eval.py \
     --load-dir="./result/$exp_name/agent3" \
 	--num-cpu=60 \
     --benchmark-iters=10000 \
-    2>&1 | tee log/eval/${exp_name}_agent3.log & disown 
+    2>&1 | tee log/eval/${exp_name}_agent3.log &
 
 python maddpg_o/experiments/train_helper/train_helpers_eval.py \
     --num-good=6 \
@@ -20,7 +20,7 @@ python maddpg_o/experiments/train_helper/train_helpers_eval.py \
     --load-dir="./result/$exp_name/agent6" \
 	--num-cpu=60 \
     --benchmark-iters=10000 \
-    2>&1 | tee log/eval/${exp_name}_agent6.log & disown 
+    2>&1 | tee log/eval/${exp_name}_agent6.log &
 
 python maddpg_o/experiments/train_helper/train_helpers_eval.py \
     --num-good=12 \
@@ -30,4 +30,4 @@ python maddpg_o/experiments/train_helper/train_helpers_eval.py \
     --load-dir="./result/$exp_name/agent12" \
 	--num-cpu=60 \
     --benchmark-iters=10000 \
-    2>&1 | tee log/eval/${exp_name}_agent12.log & disown 
+    2>&1 | tee log/eval/${exp_name}_agent12.log &

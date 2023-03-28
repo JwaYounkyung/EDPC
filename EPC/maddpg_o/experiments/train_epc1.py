@@ -23,8 +23,11 @@ def add_extra_flags(parser):
     parser.add_argument('--stage-n-envs', nargs="+", default=[25]) 
     parser.add_argument('--test-num-episodes', type=int, default=2000)
     # parser.add_argument('--test-standard', type=str, default="average")
-    parser.add_argument('--mutation-rate', type=float, default=0.2)
-    parser.add_argument('--roulette-mode', type=str, default='proportional')
+    parser.add_argument('--mutation', action="store_true", default=False)
+    parser.add_argument('--mutation-rate', type=float, default=0.25)
+    parser.add_argument('--selection', type=str, default='top-k') # top-k, roulette
+    parser.add_argument('--roulette-mode', type=str, default='proportional') # proportional, ranking
+    parser.add_argument('--exponential-alpha', type=float, default=3) 
     return parser
 
 
@@ -71,8 +74,10 @@ def train_epc(arglist):
 
     n = original_arglist.initial_population
     roulette_mode = original_arglist.roulette_mode
+    selection_mode = original_arglist.selection
 
     last_dirs = []
+    print('mutation mode-{}, selection mode-{}'.format(original_arglist.mutation, selection_mode))
     print("Training stage-0 ...")
     for i in range(n):
         arglist.save_dir = join_dir(stage_dir, "seed-{}".format(i))
@@ -102,7 +107,7 @@ def train_epc(arglist):
         compete_arglist.save_dir = join_dir(stage_dir, "compete_result")
         return compete(compete_arglist)
 
-    def seed_roulette(scores, mode='proportional'):
+    def seed_roulette(scores, alpha, mode='proportional'):
         '''
         mode = 'proportional' or 'ranking'
         'proportional'
@@ -115,7 +120,7 @@ def train_epc(arglist):
             # min_fitness = min(scores)
             # fitness = [s+np.abs(min_fitness) for s in scores]
             # total_fitness = sum(fitness)
-            fitness = exponential_mapping(scores)
+            fitness = exponential_mapping(scores, alpha)
         elif mode == 'ranking':
             s = sorted(scores, reverse=True)
             rank = [s.index(x)+1 for x in scores]
@@ -174,25 +179,37 @@ def train_epc(arglist):
                             n += 1
             assert (n == (k * (k + 1) // 2) ** 2)
         else:
-            agent_scores = [report['detailed_reports'][i]['sheep']['ind_score'] for i in range(num_stages)]
             arglist.num_food *= 2
-            ## roulette
-            parents_set = []
-            while n < (k * (k + 1) // 2):
-                par1, par2 = seed_roulette(scores, mode=roulette_mode)
-                parents_set.append(tuple([par1, par2]))
-                # if tuple([par1, par2]) in parents_set:
-                #     continue
-                print("Training seed-{} (from seed {} x {}) ...".format(n, par1, par2))
-                arglist.save_dir = join_dir(stage_dir, "seed-{}".format(n))
-                cur_dirs.append(arglist.save_dir)
-                arglist.wolf_init_load_dirs = [last_dirs[par1], last_dirs[par2]]
-                arglist.sheep_init_load_dirs = [last_dirs[par1], last_dirs[par2]]
-                arglist.agent_scores = [agent_scores[par1], agent_scores[par2]]
-                mix_match(copy.deepcopy(arglist))
-                n += 1
+            agent_scores = [report['detailed_reports'][i]['sheep']['ind_score'] for i in range(num_stages)]
+            if selection_mode == 'roulette':
+                parents_set = []
+                while n < (k * (k + 1) // 2):
+                    par1, par2 = seed_roulette(scores, alpha=original_arglist.exponential_alpha, mode=roulette_mode)
+                    parents_set.append(tuple([par1, par2]))
+                    # if tuple([par1, par2]) in parents_set:
+                    #     continue
+                    print("Training seed-{} (from seed {} x {}) ...".format(n, par1, par2))
+                    arglist.save_dir = join_dir(stage_dir, "seed-{}".format(n))
+                    cur_dirs.append(arglist.save_dir)
+                    arglist.wolf_init_load_dirs = [last_dirs[par1], last_dirs[par2]]
+                    arglist.sheep_init_load_dirs = [last_dirs[par1], last_dirs[par2]]
+                    arglist.agent_scores = [agent_scores[par1], agent_scores[par2]]
+                    mix_match(copy.deepcopy(arglist))
+                    n += 1
+                print("Parents set stage-{}:".format(s+1), parents_set)
+            elif selection_mode == 'top-k':
+                for i in range(k):
+                    for j in range(i, k):
+                        print("Training seed-{} (from seed {} x {}) ...".format(n, indices[i], indices[j]))
+                        arglist.save_dir = join_dir(stage_dir, "seed-{}".format(n))
+                        cur_dirs.append(arglist.save_dir)
+                        arglist.wolf_init_load_dirs = [last_dirs[indices[i]], last_dirs[indices[j]]]
+                        arglist.sheep_init_load_dirs = [last_dirs[indices[i]], last_dirs[indices[j]]]
+                        arglist.agent_scores = [agent_scores[indices[i]], agent_scores[indices[j]]]
+                        mix_match(copy.deepcopy(arglist))
+                        n += 1
             assert (n == (k * (k + 1) // 2))
-            print("Parents set stage-{}:".format(s+1), parents_set)
+            
         
         last_dirs = cur_dirs
 
