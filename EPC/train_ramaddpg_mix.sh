@@ -1,13 +1,13 @@
 #!/bin/sh
-exp_name="ramaddpg_mix_noise1"
-noise=1
+exp_name="ramaddpg_qnature_mix_noise0"
+noise=0
 
 CUDA_VISIBLE_DEVICES="" python -m maddpg_o.experiments.train_epc1 \
     --initial-population=3 \
     --num-selection=2 \
     --num-stages=3 \
     --stage-num-episodes 100000 50000 50000\
-    --mutation=True \
+    --mutation \
     --mutation-rate=0.25 \
     --num-good=3 \
     --num-food=3 \

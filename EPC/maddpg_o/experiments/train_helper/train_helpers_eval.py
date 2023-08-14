@@ -472,6 +472,7 @@ def eval(arglist):
             action_n = [agent.action(obs) for agent, obs in zip(trainers,obs_n)] # agent action
             # environment step
             new_obs_n, rew_n, done_n, info_n = env.step(action_n)
+            rew_n = info_n['true_rewards']
             if (train_step % arglist.max_episode_len == 0):
                 history_info = info_n
             else:

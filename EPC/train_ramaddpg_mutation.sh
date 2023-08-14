@@ -1,6 +1,6 @@
 #!/bin/sh
-exp_name="ramaddpg_qnature_mutation_noise1"
-noise=1
+exp_name="ramaddpg_qnature_mutation_noise0"
+noise=0
 
 CUDA_VISIBLE_DEVICES="" python -m maddpg_o.experiments.train_epc1 \
     --initial-population=3 \
