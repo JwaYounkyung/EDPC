@@ -1,5 +1,5 @@
-# GT Project
-
+# EDPC with RA-MADDPG
+This is the code for implementing the EDPC algorithm presented in the IEEE Conference on Decision and Control (CDC) 2023 [paper](https://github.com/JwaYounkyung/GT_Project/blob/master/EDPC_Paper.pdf).
 ## Installation
 
 - conda environment setting
